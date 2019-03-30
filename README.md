@@ -1,9 +1,9 @@
-# Stepify [![Build Status](https://travis-ci.org/rishab2113/Stepify.svg?branch=master)](https://travis-ci.org/rishab2113/Stepify)
+# Eyespace [![Build Status](https://travis-ci.org/rishab2113/Eyespace.svg?branch=master)](https://travis-ci.org/rishab2113/Eyespace)
 
 # Inspiration
 Generally, the elderly and visually impaired people walk with someone by their side. But what if nobody is around to help? We were very concerned about the fact that help may not be always available so we wanted to make a positive impact on the elderly and visually impaired people. Nowadays, the elderly want to have independence and not always want people around to monitor them, so we also catered to their independence.   
 
-# What does Stepify do?
+# What does Eyespace do?
 Our web-app takes input in the form of images through the raspberry pi camera, processes them and through the ultrasonic sensor, it gives accurate distance calculation between an object and the person with the camera. Also, if the distance from the object to the person is small, a warning signal is sent out to the person in the form of speech through their speaker or headset. If the person does not respond to this message within 1 minute, an emergency call is sent out to 911 and another emergency contact of the user's choice (registered in the firebase database).
 
 # How did we build it?
@@ -20,20 +20,3 @@ We learned how to use a Raspberry Pi in depth and its functions. We learned how 
 
 # Next stages of this project...
 Our passion for helping the elderly and visually impaired will always exist, and we will continue to take this project on further in order to make it a successful product and make a change in society foe a greater good.
-
-
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
