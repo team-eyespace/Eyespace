@@ -1,0 +1,62 @@
+matrix:
+  include:
+  - os: linux
+    language: android
+    licenses:
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
+    android:
+      components:
+      - tools
+      - platform-tools
+      - build-tools-28.0.3
+      - android-28
+      - sys-img-armeabi-v7a-google_apis-28
+      - extra-android-m2repository
+      - extra-google-m2repository
+      - extra-google-android-support
+    jdk: oraclejdk8
+    sudo: false
+    addons:
+      apt:
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - libstdc++6
+        - fonts-droid
+    before_script:
+    - cd eyespace
+    - openssl aes-256-cbc -K $encrypted_dc49490ceb50_key -iv $encrypted_dc49490ceb50_iv -in secrets.tar.enc -out secrets.tar -d
+    - tar xvf secrets.tar
+    - mv google-services.json android/app/
+    - wget http://services.gradle.org/distributions/gradle-3.5-bin.zip
+    - unzip -qq gradle-3.5-bin.zip
+    - export GRADLE_HOME=$PWD/gradle-3.5
+    - export PATH=$GRADLE_HOME/bin:$PATH
+    - git clone https://github.com/flutter/flutter.git
+    - "./flutter/bin/flutter doctor"
+    script:
+    - "./flutter/bin/flutter -v build apk"
+  - os: osx
+    language: generic
+    osx_image: xcode10.1
+    before_script:
+    - cd eyespace
+    - openssl aes-256-cbc -K $encrypted_dc49490ceb50_key -iv $encrypted_dc49490ceb50_iv -in secrets.tar.enc -out secrets.tar -d
+    - tar xvf secrets.tar
+    - mv GoogleService-Info.plist ios/Runner/
+    - sudo ntpdate -u time.apple.com
+    - brew install --HEAD usbmuxd
+    - brew install --HEAD libimobiledevice
+    - brew install ideviceinstaller
+    - brew install ios-deploy
+    - gem install cocoapods
+    - git clone https://github.com/flutter/flutter.git
+    - cd ios && pod install && pod repo update
+    - cd ..
+    script:
+    - "travis_wait 30 ./flutter/bin/flutter build ios --no-codesign"
+cache:
+  directories:
+  - "$HOME/.pub-cache"

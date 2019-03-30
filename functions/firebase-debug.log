@@ -1,0 +1,30 @@
+[debug] [2019-03-26T02:34:00.488Z] ----------------------------------------------------------------------
+[debug] [2019-03-26T02:34:00.492Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Abhinav Tripathy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2019-03-26T02:34:00.492Z] CLI Version:   6.4.0
+[debug] [2019-03-26T02:34:00.492Z] Platform:      win32
+[debug] [2019-03-26T02:34:00.492Z] Node Version:  v11.1.0
+[debug] [2019-03-26T02:34:00.504Z] Time:          Mon Mar 25 2019 22:34:00 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-03-26T02:34:00.504Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-26T02:34:00.522Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-26T02:34:00.523Z] > authorizing via signed-in user
+[debug] [2019-03-26T02:34:00.523Z] [iam] checking project stepify-solutions for permissions ["firebase.projects.get"]
+[debug] [2019-03-26T02:34:00.525Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-03-26T02:34:00.526Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-03-26T02:34:00.698Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-26T02:34:00.703Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/stepify-solutions:testIamPermissions  
+
+[debug] [2019-03-26T02:34:00.960Z] <<< HTTP RESPONSE 200
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-03-26T02:34:02.076Z] Fetching environment
+[debug] [2019-03-26T02:34:02.079Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/stepify-solutions  
+ 
+[debug] [2019-03-26T02:34:02.296Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-26T02:34:02.297Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/34951190910:getServerAppConfig  
+ 
+[debug] [2019-03-26T02:34:02.499Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-26T02:34:02.500Z] Starting @google-cloud/functions-emulator
+[debug] [2019-03-26T02:34:05.029Z] Parsing function triggers
+[info] +  functions: detectIntent
+[info] +  functions: detectOCR

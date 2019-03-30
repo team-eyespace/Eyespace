@@ -1,0 +1,58 @@
+var fetch = require('node-fetch');
+
+function extract_text(url, gcloud_authorization) {
+  console.log('extract_text from image '+url+' with authorization '+gcloud_authorization);
+
+  return fetch(url).then(function(res) {
+    return res.buffer();
+  }).then(function(buffer) {
+    return fetch('https://vision.googleapis.com/v1/images:annotate?key='+gcloud_authorization, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "requests":[
+          {
+            "image":{
+              "content": buffer.toString('base64')
+            },
+            "features":[
+              {
+                "type":"TEXT_DETECTION",
+                "maxResults":1
+              }
+            ]
+          }
+        ]
+      })
+    });
+  }).then(function(res) {
+    var json = res.json();
+    if (res.status >= 200 && res.status < 300) {
+      return json;
+    } else {
+      return json.then(Promise.reject.bind(Promise));
+    }
+  }).then(function(json) {
+    if (json.responses && json.responses.length && json.responses[0].error) {
+      return Promise.reject(json.responses[0].error);
+    }
+    return json.responses[0].textAnnotations[0].description;
+  });
+}
+
+if (process.argv.length > 2) {
+  // by passing the image URL and gcloud access token, you can test this module
+  process.argv.forEach(a => console.log(a));
+  extract_text(
+    process.argv[2], // image URL
+    process.argv[3]  // gcloud access token or API key
+  ).then(function(description) {
+    console.log(description);
+  }).catch(function(error) {
+    console.error(error);
+  });
+}
+
+exports.extract_text = extract_text;
