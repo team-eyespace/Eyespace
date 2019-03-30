@@ -62,7 +62,7 @@ exports.detectIntent = functions.https.onCall((data, context) => {
 });
 exports.detectOCR = functions.https.onCall((data, context) => {
   
-  //data being the base64 encoded string
+  //data.query being the base64 encoded string
 
   var options = {
     uri:keyFile.APIkey,
@@ -71,7 +71,7 @@ exports.detectOCR = functions.https.onCall((data, context) => {
     "requests":[
       {
         "image":{
-          "content": data
+          "content": data.query
         },
         "features": [
           {
@@ -188,12 +188,6 @@ exports.detectPothole = functions.https.onCall((data, context) => {
   const projectId = 'stepify-solutions';
   const computeRegion = 'us-central1';
   const modelId = 'ICN4347665193349957054';
-  const modelFullId = client.modelPath(projectId, computeRegion, modelId);
-
-  const params = {};
-
-  const payload = {};
-  payload.image = {imageBytes: data};
   
   const autoMLprediction = async (imageDataContent) => {
     const modelFullId = client.modelPath(projectId, computeRegion, modelId);
@@ -221,7 +215,7 @@ exports.detectPothole = functions.https.onCall((data, context) => {
     
   }
 
-  if(autoMLprediction(data) == "Pothole") {
+  if(autoMLprediction(data.query) == "Pothole") {
 
     console.log("true");
     return "true";
@@ -247,7 +241,7 @@ exports.detectGenContext = functions.https.onCall((data, context) => {
     "requests":[
       {
         "image":{
-          "content": data
+          "content": data.query
         },
         "features": [
           {
