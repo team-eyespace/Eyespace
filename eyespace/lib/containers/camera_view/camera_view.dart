@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:eyespace/main.dart';
@@ -11,18 +13,32 @@ class CameraView extends StatefulWidget {
 
 class CameraViewState extends State<CameraView> {
   CameraController controller;
+  CameraImage image;
 
   @override
   void initState() {
     super.initState();
-    controller = CameraController(cameras[0], ResolutionPreset.high);
-    controller.initialize().then((_) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {});
+    _initCamera();
+  }
+
+  _initCamera() async{
+    controller = CameraController(cameras[0], ResolutionPreset.medium);
+    await controller.initialize();
+    setState(() {});
+    _initStream();
+  }
+
+  _initStream() {
+    controller.startImageStream((CameraImage onAvailable) {
+      image = onAvailable;
     });
   }
+
+  Uint8List concatenatePlanes(List<Plane> planes) {
+  final WriteBuffer allBytes = WriteBuffer();
+  planes.forEach((Plane plane) => allBytes.putUint8List(plane.bytes));
+  return allBytes.done().buffer.asUint8List();
+}
 
   @override
   void dispose() {
