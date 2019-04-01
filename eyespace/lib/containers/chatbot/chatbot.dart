@@ -68,7 +68,7 @@ class _ChatMessagesState extends State<ChatMessages>
         _buildList(),
         isListening || _controllerText.text != ""
             ? _buildComposer(width: size.width - 20.0)
-            : _buildComposer(width: 0),
+            : _buildNothing(),
         !isListening
             ? _buildIconButton(authorized ? Icons.mic : Icons.mic_off,
                 authorized ? _startRecognition : null,
@@ -130,6 +130,10 @@ class _ChatMessagesState extends State<ChatMessages>
     });
   }
 
+  _buildNothing(){
+    return Container();
+  }
+
   _buildComposer({double width}) {
     return Container(
         width: width,
@@ -143,6 +147,15 @@ class _ChatMessagesState extends State<ChatMessages>
                     controller: _controllerText,
                     decoration: InputDecoration.collapsed(hintText: ""),
                     onTap: _stopRecognition,
+                    onSubmitted: (String out){
+                      if(_controllerText.text == ""){
+                        return;
+                      }
+                      else{
+                        _handleSubmit(_controllerText.text, raid.data['displayName'] ?? "",
+                            raid.data['uid'] ?? "");
+                      }
+                    },
                   )),
             ),
             new IconButton(
