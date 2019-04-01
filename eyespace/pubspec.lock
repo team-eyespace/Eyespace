@@ -172,6 +172,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.2"
+  path_provider:
+    dependency: "direct main"
+    description:
+      name: path_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0+1"
   pedantic:
     dependency: transitive
     description:
@@ -215,9 +222,9 @@ packages:
   speech_recognition:
     dependency: "direct main"
     description:
-      name: speech_recognition
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "/Users/rishabnayak/Desktop/Projects/speech_recognition"
+      relative: false
+    source: path
     version: "0.3.0+1"
   stack_trace:
     dependency: transitive

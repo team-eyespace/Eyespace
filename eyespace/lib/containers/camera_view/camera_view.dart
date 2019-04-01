@@ -1,8 +1,10 @@
-import 'dart:typed_data';
-import 'package:flutter/foundation.dart';
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:eyespace/main.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 class CameraView extends StatefulWidget {
   @override
@@ -13,7 +15,7 @@ class CameraView extends StatefulWidget {
 
 class CameraViewState extends State<CameraView> {
   CameraController controller;
-  CameraImage image;
+  Directory storage;
 
   @override
   void initState() {
@@ -23,22 +25,26 @@ class CameraViewState extends State<CameraView> {
 
   _initCamera() async{
     controller = CameraController(cameras[0], ResolutionPreset.medium);
+    storage = await getApplicationDocumentsDirectory();
     await controller.initialize();
     setState(() {});
-    _initStream();
+    _takePicture();
   }
 
-  _initStream() {
-    controller.startImageStream((CameraImage onAvailable) {
-      image = onAvailable;
-    });
+  _takePicture() async{
+    File image = File(storage.path+'/image.jpg');
+    await image.delete();
+    await controller.takePicture(storage.path+'/image.jpg');
+    String b64 = base64Encode(await image.readAsBytes());
+    final dynamic result = await CloudFunctions.instance.call(
+      functionName: 'detectGenContext',
+      parameters: <String, dynamic>{
+        'query': b64,
+      },
+    );
+    await image.delete();
+    print(result);
   }
-
-  Uint8List concatenatePlanes(List<Plane> planes) {
-  final WriteBuffer allBytes = WriteBuffer();
-  planes.forEach((Plane plane) => allBytes.putUint8List(plane.bytes));
-  return allBytes.done().buffer.asUint8List();
-}
 
   @override
   void dispose() {

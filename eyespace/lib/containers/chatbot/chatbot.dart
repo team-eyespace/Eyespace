@@ -117,11 +117,11 @@ class _ChatMessagesState extends State<ChatMessages>
     setState(() {
       isListening = true;
     });
-    await _speech.listen(locale: 'en_US');
+    await _speech.listen(locale: 'en_US'); //LOCALIZATION
     _speech.setRecognitionResultHandler((handler) {
       _controllerText.text = handler;
     });
-    _speech.setRecognitionCompleteHandler(() {
+    _speech.setRecognitionCompleteHandler((out) {
       setState(() {
         isListening = false;
       });
@@ -191,7 +191,7 @@ class _ChatMessagesState extends State<ChatMessages>
         'projectID': 'stepify-solutions',
         'sessionID': uid,
         'query': text,
-        'languageCode': 'en'
+        'languageCode': 'en' //LOCALIZATION
       },
     );
 
