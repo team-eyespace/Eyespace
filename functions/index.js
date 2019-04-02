@@ -7,7 +7,6 @@ const chrono = require('chrono-node');
 const keyFile = require('./key.js');
 const request = require('request');
 const automl = require('@google-cloud/automl');
-
 admin.initializeApp();
 
 /*
@@ -60,6 +59,7 @@ exports.detectIntent = functions.https.onCall((data, context) => {
     console.error('ERROR: ' + err);
   }
 });
+
 exports.detectOCR = functions.https.onCall((data, context) => {
   
   //data.query being the base64 encoded string
@@ -86,6 +86,7 @@ exports.detectOCR = functions.https.onCall((data, context) => {
 let detections = {};
 
 request(options, function (error, response, body) {
+  
     if (!error && response.statusCode == 200) {
         detections = response.body;
 
@@ -169,9 +170,9 @@ request(options, function (error, response, body) {
     let finalResponse = "The date detected is " + finalDate + " The time detected is " + time;
     
     console.log(finalResponse);
-
-    return finalResponse;
   
+    return finalResponse;
+
     }
     else {
 
@@ -179,6 +180,7 @@ request(options, function (error, response, body) {
         return "Error";
     }
   });
+
 });
 
 
@@ -241,7 +243,7 @@ exports.detectGenContext = functions.https.onCall((data, context) => {
     "requests":[
       {
         "image":{
-          "content": data.query
+          "content": data
         },
         "features": [
           {
@@ -253,30 +255,22 @@ exports.detectGenContext = functions.https.onCall((data, context) => {
     }
 }; 
 
+let generalContext = "";
+
+const getBack = async(options) => {
+
+
+}
+
 request(options, function (error, response, body) {
+  
   if (!error && response.statusCode == 200) {
 
-    let jsonAPIResponse = response.body.responses[0].labelAnnotations;
-    let jsonValues = [];
+    let returnRequest = response.body;
 
-    console.log("General Context Tags Collected");
+    detectGenContextHelper(returnRequest);
 
-    for(let i in jsonAPIResponse) {
 
-        jsonValues.push(jsonAPIResponse[i].description);
-
-    }
-    let generalContext = '';
-
-    for(let i = 0; i < 5; i++) {
-
-        generalContext = generalContext + jsonValues[i] + ' ';
-        
-    }
-
-    generalContext = 'The following are present in the scene ' + generalContext;
-
-    return generalContext;
   }
 
   else {
@@ -286,6 +280,40 @@ request(options, function (error, response, body) {
 
   }
 });
+  
+  let detectGenContextHelper = function(helperParam) {
+    
+    let jsonAPIResponse = helperParam.responses[0].labelAnnotations;
+    let jsonValues = [];
+
+    console.log("General Context Tags Collected");
+
+    for(let i in jsonAPIResponse) {
+
+        jsonValues.push(jsonAPIResponse[i].description);
+
+    }
+
+    for(let i = 0; i < 5; i++) {
+
+        if(jsonValues[i] != undefined) {
+
+          generalContext = generalContext + jsonValues[i] + " ";
+
+        }
+        
+        
+    }
+
+    generalContext = "The following are present in the scene " + generalContext;
+
+    //console.log(generalContext);
+
+  }
+  console.log("final return value");
+  console.log(generalContext)
+  return generalContext;
+  
 
 });
 
