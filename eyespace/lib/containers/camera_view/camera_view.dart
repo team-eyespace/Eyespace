@@ -71,7 +71,6 @@ class CameraViewState extends State<CameraView> {
             ),
           ),
         ),
-        new Text(),
         new Align(
           alignment: Alignment.bottomCenter,
           child: Container(
