@@ -23,18 +23,16 @@ class CameraViewState extends State<CameraView> {
     _initCamera();
   }
 
-  _initCamera() async{
+  _initCamera() async {
     controller = CameraController(cameras[0], ResolutionPreset.medium);
     storage = await getApplicationDocumentsDirectory();
     await controller.initialize();
     setState(() {});
-    _takePicture();
   }
 
-  _takePicture() async{
-    File image = File(storage.path+'/image.jpg');
-    await image.delete();
-    await controller.takePicture(storage.path+'/image.jpg');
+  _takePicture() async {
+    await controller.takePicture(storage.path + '/image.jpg');
+    File image = File(storage.path + '/image.jpg');
     String b64 = base64Encode(await image.readAsBytes());
     final dynamic result = await CloudFunctions.instance.call(
       functionName: 'detectGenContext',
@@ -59,14 +57,40 @@ class CameraViewState extends State<CameraView> {
     }
     final size = MediaQuery.of(context).size;
     final deviceRatio = size.width / size.height;
-    return Transform.scale(
-      scale: controller.value.aspectRatio / deviceRatio,
-      child: Center(
-        child: AspectRatio(
-          aspectRatio: controller.value.aspectRatio,
-          child: CameraPreview(controller),
+    return new Stack(
+      alignment: FractionalOffset.center,
+      children: <Widget>[
+        new Positioned.fill(
+          child: new Transform.scale(
+            scale: controller.value.aspectRatio / deviceRatio,
+            child: Center(
+              child: AspectRatio(
+                aspectRatio: controller.value.aspectRatio,
+                child: CameraPreview(controller),
+              ),
+            ),
+          ),
         ),
-      ),
+        new Text(),
+        new Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+              width: double.infinity,
+              height: 120.0,
+              padding: EdgeInsets.all(20.0),
+              child: Stack(children: <Widget>[
+                Align(
+                  alignment: Alignment.center,
+                  child: new FloatingActionButton(
+                    child: new Icon(Icons.camera),
+                    onPressed: _takePicture,
+                    backgroundColor: Colors.blueAccent)
+                ),
+              ]
+            )
+          )
+        )
+      ],
     );
   }
 }
