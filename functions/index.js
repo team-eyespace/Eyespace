@@ -61,266 +61,196 @@ exports.detectIntent = functions.https.onCall((data, context) => {
 });
 
 exports.detectOCR = functions.https.onCall((data, context) => {
-  
+
   //data.query being the base64 encoded string
 
-  var options = {
-    uri:keyFile.APIkey,
-    method: 'POST',
-    json:{
-    "requests":[
-      {
-        "image":{
-          "content": data.query
-        },
-        "features": [
-          {
-            "type":"TEXT_DETECTION"
-          }
-        ]
-      }
-    ]
+  const vision = require('@google-cloud/vision');
+  const client = new vision.ImageAnnotatorClient();
+
+  const request = {
+    image: {
+      content: data.query
     }
-};  
+  };
 
-let detections = {};
+  return client.textDetection(request).then(response => {
 
-request(options, function (error, response, body) {
-  
-    if (!error && response.statusCode == 200) {
-        detections = response.body;
+    let jsonAPIresponse = response[0].textAnnotations;
+    let jsonValues = [];
 
-        let jsonAPIresponse = detections.responses[0].textAnnotations;
-        let jsonValues = [];
+    console.log("OCR tags collected");
 
-        console.log("OCR tags collected");
+    for (let i in jsonAPIresponse) {
 
-        for (let i in jsonAPIresponse) {
-            
-            try {
-                let chronoResult = chrono.parse(jsonAPIresponse[i].description);
-                jsonValues.push(chronoResult[0].text);
-                
-                
-            }
-            catch(error) {
-                continue;
-            };
+      try {
+        let chronoResult = chrono.parse(jsonAPIresponse[i].description);
+        jsonValues.push(chronoResult[0].text);
 
-        }
+
+      } catch (error) {
+        continue;
+      };
+
+    }
 
     let timeValues = {};
 
     for (let i in jsonAPIresponse) {
-        try {
+      try {
 
-            let chronotimeResult = chrono.parse(jsonAPIresponse[i].description);
-            timeValues[chronotimeResult[0].start.knownValues.hour] = chronotimeResult[0].start.knownValues.minute;
+        let chronotimeResult = chrono.parse(jsonAPIresponse[i].description);
+        timeValues[chronotimeResult[0].start.knownValues.hour] = chronotimeResult[0].start.knownValues.minute;
 
-        }
-        catch(error) {
-            continue;
-        };
+      } catch (error) {
+        continue;
+      };
 
     }
-    
+
+    console.log("Parsed date and time")
+
     let hour = 200;
     let minute = 0;
-    
-    for(let timeKey in timeValues) {
-        try {
-            
-            if(timeKey != undefined && timeValues[timeKey] != undefined && timeKey < hour) {
 
-                hour = timeKey;
-                minute = timeValues[timeKey];
+    for (let timeKey in timeValues) {
+      try {
 
-            }
+        if (timeKey != undefined && timeValues[timeKey] != undefined && timeKey < hour) {
+
+          hour = timeKey;
+          minute = timeValues[timeKey];
 
         }
-        catch(error) {
-            continue;
-        };
+
+      } catch (error) {
+        continue;
+      };
     }
 
     let highest = 0;
     let finalDate;
-    for(let i = 0; i < jsonValues.length; i++) {
+    for (let i = 0; i < jsonValues.length; i++) {
 
-        if(jsonValues[i].length > highest) {
+      if (jsonValues[i].length > highest) {
 
-            highest = jsonValues[i].length;
-            finalDate = jsonValues[i];
+        highest = jsonValues[i].length;
+        finalDate = jsonValues[i];
 
-        }
+      }
 
     }
     finalDate = finalDate.trim();
-    
-    if(hour == 200) {
 
-        hour = 0;
+    if (hour == 200) {
+
+      hour = 0;
 
     }
     let time = hour + ":" + minute;
-    
+
     console.log("Date: " + finalDate);
     console.log("Time: " + time);
-    
+
     let finalResponse = "The date detected is " + finalDate + " The time detected is " + time;
-    
+
     console.log(finalResponse);
-  
+
     return finalResponse;
 
-    }
-    else {
 
-        console.log("error");
-        return "Error";
-    }
   });
+
 
 });
 
 
 exports.detectPothole = functions.https.onCall((data, context) => {
-  
+
   const client = new automl.PredictionServiceClient();
   const projectId = 'stepify-solutions';
   const computeRegion = 'us-central1';
   const modelId = 'ICN4347665193349957054';
-  
-  const autoMLprediction = async (imageDataContent) => {
-    const modelFullId = client.modelPath(projectId, computeRegion, modelId);
-    const params = {};
-    const payload = {};
-    payload.image = {imageBytes: imageDataContent};
-    try {
-      const [response] = await client.predict({
-        name: modelFullId,
-        payload: payload,
-        params: params,
-      });
-      
-      console.log("Response from autoML API: " + reponse.payload);
 
-      return response.payload[0].displayName;
-  
+  const modelFullId = client.modelPath(projectId, computeRegion, modelId);
+  const params = {};
+  const payload = {};
+  payload.image = {
+    imageBytes: data.query
+  };
+
+  return client.predict({
+    name: modelFullId,
+    payload: payload,
+    params: params,
+  }).then(response => {
+
+    console.log("Response from autoML API: " + reponse.payload);
+
+    if (response.payload[0].displayName == "Pothole") {
+
+      return "true";
+
+    } 
+    
+    else {
+
+      return "false";
+
     }
-    catch(error) {
 
-      console.error(error);
-      return "error";
-    
-    };
-    
-  }
+  });
 
-  if(autoMLprediction(data.query) == "Pothole") {
-
-    console.log("true");
-    return "true";
-
-  }
-  else {
-
-    console.log("false");
-    return "false";
-
-  }
-  
-  
 });
-
 
 exports.detectGenContext = functions.https.onCall((data, context) => {
 
-  var options = {
-    uri:keyFile.APIkey,
-    method: 'POST',
-    json:{
-    "requests":[
-      {
-        "image":{
-          "content": data
-        },
-        "features": [
-          {
-            "type":"LABEL_DETECTION"
-          }
-        ]
-      }
-    ]
+  const vision = require('@google-cloud/vision');
+  const client = new vision.ImageAnnotatorClient();
+
+  const request = {
+    image: {
+      content: data.query
     }
-}; 
+  };
 
-let generalContext = "";
+  return client.labelDetection(request)
+    .then(response => {
 
-const getBack = async(options) => {
+      let jsonAPIResponse = response[0].labelAnnotations;
+      let jsonValues = [];
+      let generalContext = "";
 
+      console.log("General Context Tags Collected");
 
-}
-
-request(options, function (error, response, body) {
-  
-  if (!error && response.statusCode == 200) {
-
-    let returnRequest = response.body;
-
-    detectGenContextHelper(returnRequest);
-
-
-  }
-
-  else {
-
-    console.log("error");
-    return "Error";
-
-  }
-});
-  
-  let detectGenContextHelper = function(helperParam) {
-    
-    let jsonAPIResponse = helperParam.responses[0].labelAnnotations;
-    let jsonValues = [];
-
-    console.log("General Context Tags Collected");
-
-    for(let i in jsonAPIResponse) {
+      for (let i in jsonAPIResponse) {
 
         jsonValues.push(jsonAPIResponse[i].description);
 
-    }
+      }
 
-    for(let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5; i++) {
 
-        if(jsonValues[i] != undefined) {
+        if (jsonValues[i] != undefined) {
 
           generalContext = generalContext + jsonValues[i] + " ";
 
         }
-        
-        
-    }
 
-    generalContext = "The following are present in the scene " + generalContext;
+      }
 
-    //console.log(generalContext);
+      generalContext = "The following are present in the scene " + generalContext;
 
-  }
-  console.log("final return value");
-  console.log(generalContext)
-  return generalContext;
-  
+      return generalContext;
+    });
 
 });
 
-const getTranslate = async(inputString) => {
+const getTranslate = async (inputString) => {
 
   let text = inputString
-  const {Translate} = require('@google-cloud/translate');
+  const {
+    Translate
+  } = require('@google-cloud/translate');
 
   const translate = new Translate({
     projectId: 'stepify-solutions',
@@ -330,7 +260,7 @@ const getTranslate = async(inputString) => {
   const target = 'pt';
 
   const [translation] = await translate.translate(text, target);
-  
+
   return translation;
 
 }
