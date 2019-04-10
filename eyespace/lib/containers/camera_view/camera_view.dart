@@ -1,13 +1,13 @@
-import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:eyespace/main.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_recognition/speech_recognition.dart';
+import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+import 'package:eyespace/containers/camera_view/detector_painters.dart';
+import 'package:eyespace/containers/camera_view/utils.dart';
 
 class CameraView extends StatefulWidget {
   @override
@@ -16,14 +16,10 @@ class CameraView extends StatefulWidget {
   }
 }
 
-String encode(List<int> value) {
-  // this runs on another isolate
-  return base64Encode(value);
-}
-
 class CameraViewState extends State<CameraView> {
+  List<ImageLabel> _scanResults;
+  bool _isDetecting = false;
   CameraController controller;
-  String imagePath;
   FlutterTts flutterTts;
   SpeechRecognition _speech = SpeechRecognition();
   bool isListening = false;
@@ -95,7 +91,7 @@ class CameraViewState extends State<CameraView> {
             "An error occurred, please try again!");
       } else if (result[0]['queryResult']['intent']['displayName'] ==
           "image.identify") {
-        _takePicture();
+        _speakObjects();
       }
     });
   }
@@ -106,50 +102,41 @@ class CameraViewState extends State<CameraView> {
   }
 
   _initCamera() async {
-    controller = CameraController(cameras[0], ResolutionPreset.low);
+    final FirebaseVision mlVision = FirebaseVision.instance;
+    controller = CameraController(cameras[0], ResolutionPreset.medium);
     await controller.initialize();
-    setState(() {});
-  }
+    controller.startImageStream((CameraImage image) {
+    if (_isDetecting) return;
 
-  void _takePicture() {
-    takePicture().then((String filePath) {
-      if (mounted) {
+    _isDetecting = true;
+
+    detect(image, mlVision.imageLabeler().processImage).then(
+      (dynamic result) {
         setState(() {
-          imagePath = filePath;
+          _scanResults = result;
         });
-      }
-    });
+
+        _isDetecting = false;
+      },
+    ).catchError(
+      (_) {
+        _isDetecting = false;
+      },
+    );
+  });
   }
 
-  _runRecognition(String filePath){
-    File(filePath).readAsBytes().then((onValue) async {
-      var b64 = await compute(encode, onValue);
-        CloudFunctions.instance.call(
-          functionName: 'detectGenContext',
-          parameters: <String, dynamic>{
-            'query': b64,
-          },
-        ).then((onRes) {
-          flutterTts.speak(onRes);
-          File(filePath).delete();
-          setState(() {
-            imagePath = null;
-          });
-        });
-    });
-  }
-
-  Future<String> takePicture() async {
-    final Directory extDir = await getApplicationDocumentsDirectory();
-    final String filePath = extDir.path + '/image.jpg';
-
-    if (controller.value.isTakingPicture) {
-      // A capture is already pending, do nothing.
-      return null;
+  _speakObjects() {
+    if (_scanResults is! List<ImageLabel>) {
+      flutterTts.speak("Nothing detected!");
     }
-
-    await controller.takePicture(filePath);
-    return filePath;
+    else{
+      String result = '';
+      for (ImageLabel label in _scanResults.take(5)) {
+        result = result + label.text;
+      }
+      flutterTts.speak("The scene contains the following " + result);
+    }
   }
 
   _cameraPreview() {
@@ -221,7 +208,7 @@ class CameraViewState extends State<CameraView> {
                     children: <Widget>[
                       FloatingActionButton(
                           child: new Icon(Icons.camera),
-                          onPressed: _takePicture,
+                          onPressed: _speakObjects,
                           backgroundColor: Colors.blueAccent),
                       !isListening
                           ? _buildIconButton(Icons.mic, _startRecognition,
@@ -237,13 +224,29 @@ class CameraViewState extends State<CameraView> {
             )));
   }
 
-  _resultWidget() {
-    return Expanded(
-      child: Align(
-          alignment: Alignment.center,
-          child: imagePath == null ? null : _runRecognition(imagePath)),
-    );
+  Widget _buildResults() {
+  const Text noResultsText = const Text('No results!');
+
+  if (_scanResults == null ||
+      controller == null ||
+      !controller.value.isInitialized) {
+    return noResultsText;
   }
+
+  CustomPainter painter;
+
+  final Size imageSize = Size(
+    controller.value.previewSize.height,
+    controller.value.previewSize.width,
+  );
+
+  if (_scanResults is! List<ImageLabel>) return noResultsText;
+  painter = LabelDetectorPainter(imageSize, _scanResults);
+
+  return CustomPaint(
+    painter: painter,
+  );
+}
 
   @override
   void dispose() {
@@ -259,7 +262,7 @@ class CameraViewState extends State<CameraView> {
     final size = MediaQuery.of(context).size;
     final deviceRatio = size.width / size.height;
     return new Stack(
-      alignment: FractionalOffset.center,
+      fit: StackFit.expand,
       children: <Widget>[
         new Positioned.fill(
           child: new Transform.scale(
@@ -272,6 +275,7 @@ class CameraViewState extends State<CameraView> {
             ),
           ),
         ),
+        _buildResults(),
         Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -291,10 +295,6 @@ class CameraViewState extends State<CameraView> {
                   ],
                 ))),
         _captureControlRowWidget(size),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[_resultWidget()],
-        ),
       ],
     );
   }
