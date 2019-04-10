@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:eyespace/main.dart';
@@ -13,6 +14,11 @@ class CameraView extends StatefulWidget {
   CameraViewState createState() {
     return new CameraViewState();
   }
+}
+
+String encode(List<int> value) {
+  // this runs on another isolate
+  return base64Encode(value);
 }
 
 class CameraViewState extends State<CameraView> {
@@ -100,7 +106,7 @@ class CameraViewState extends State<CameraView> {
   }
 
   _initCamera() async {
-    controller = CameraController(cameras[0], ResolutionPreset.medium);
+    controller = CameraController(cameras[0], ResolutionPreset.low);
     await controller.initialize();
     setState(() {});
   }
@@ -115,20 +121,21 @@ class CameraViewState extends State<CameraView> {
     });
   }
 
-  _runRecognition(String filePath) {
-    File(filePath).readAsBytes().then((onValue) {
-      CloudFunctions.instance.call(
-        functionName: 'detectGenContext',
-        parameters: <String, dynamic>{
-          'query': base64Encode(onValue),
-        },
-      ).then((onValue) {
-        flutterTts.speak(onValue);
-        File(filePath).delete();
-        setState(() {
-          imagePath = null;
+  _runRecognition(String filePath){
+    File(filePath).readAsBytes().then((onValue) async {
+      var b64 = await compute(encode, onValue);
+        CloudFunctions.instance.call(
+          functionName: 'detectGenContext',
+          parameters: <String, dynamic>{
+            'query': b64,
+          },
+        ).then((onRes) {
+          flutterTts.speak(onRes);
+          File(filePath).delete();
+          setState(() {
+            imagePath = null;
+          });
         });
-      });
     });
   }
 
