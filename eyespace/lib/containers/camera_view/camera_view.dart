@@ -133,7 +133,7 @@ class CameraViewState extends State<CameraView> {
     else{
       String result = '';
       for (ImageLabel label in _scanResults.take(5)) {
-        result = result + label.text;
+        result = result +", "+ label.text;
       }
       flutterTts.speak("The scene contains the following " + result);
     }
