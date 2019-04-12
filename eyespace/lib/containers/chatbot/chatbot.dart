@@ -130,7 +130,7 @@ class _ChatMessagesState extends State<ChatMessages>
     });
   }
 
-  _buildNothing(){
+  _buildNothing() {
     return Container();
   }
 
@@ -147,12 +147,13 @@ class _ChatMessagesState extends State<ChatMessages>
                     controller: _controllerText,
                     decoration: InputDecoration.collapsed(hintText: ""),
                     onTap: _stopRecognition,
-                    onSubmitted: (String out){
-                      if(_controllerText.text == ""){
+                    onSubmitted: (String out) {
+                      if (_controllerText.text == "") {
                         return;
-                      }
-                      else{
-                        _handleSubmit(_controllerText.text, raid.data['displayName'] ?? "",
+                      } else {
+                        _handleSubmit(
+                            _controllerText.text,
+                            raid.data['displayName'] ?? "",
                             raid.data['uid'] ?? "");
                       }
                     },
@@ -184,8 +185,8 @@ class _ChatMessagesState extends State<ChatMessages>
     _requestChatBot(value, uid);
   }
 
-  _requestChatBot(String text, String uid) async {
-    final dynamic result = await CloudFunctions.instance.call(
+  _requestChatBot(String text, String uid) {
+    CloudFunctions.instance.call(
       functionName: 'detectIntent',
       parameters: <String, dynamic>{
         'projectID': 'stepify-solutions',
@@ -193,15 +194,19 @@ class _ChatMessagesState extends State<ChatMessages>
         'query': text,
         'languageCode': 'en' //LOCALIZATION
       },
-    );
-
-    _addMessage(
-        name: "Eyespace",
-        initials: "E",
-        bot: true,
-        text: result[0]['queryResult']['fulfillmentText'] ??
-            result[0]['intent']['displayName'] ??
-            "An error occurred, please try again!");
+    ).then((result) {
+      if (result[0]['queryResult']['action'] != "image.identify") {
+        _addMessage(
+            name: "Eyespace",
+            initials: "E",
+            bot: true,
+            text: result[0]['queryResult']['fulfillmentText'] ??
+                "An error occurred, please try again!");
+      } else if (result[0]['queryResult']['intent']['displayName'] ==
+          "image.identify") {
+        print("worked");
+      }
+    });
   }
 
   void _addMessage(

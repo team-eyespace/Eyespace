@@ -34,12 +34,31 @@ PODS:
   - Firebase/Functions (5.20.1):
     - Firebase/CoreOnly
     - FirebaseFunctions (= 2.4.0)
+  - Firebase/MLVision (5.20.1):
+    - Firebase/CoreOnly
+    - FirebaseMLVision (= 0.15.0)
+  - Firebase/MLVisionBarcodeModel (5.20.1):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionBarcodeModel (= 0.15.0)
+  - Firebase/MLVisionFaceModel (5.20.1):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionFaceModel (= 0.15.0)
+  - Firebase/MLVisionLabelModel (5.20.1):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionLabelModel (= 0.15.0)
+  - Firebase/MLVisionTextModel (5.20.1):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionTextModel (= 0.15.0)
   - firebase_auth (0.0.1):
     - Firebase/Auth
     - Firebase/Core
     - Flutter
   - firebase_core (0.0.1):
     - Firebase/Core
+    - Flutter
+  - firebase_ml_vision (0.1.1):
+    - Firebase/Core
+    - Firebase/MLVision
     - Flutter
   - FirebaseAnalytics (5.8.0):
     - FirebaseCore (~> 5.4)
@@ -86,16 +105,55 @@ PODS:
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/UserDefaults (~> 5.2)
+  - FirebaseMLCommon (0.15.0):
+    - FirebaseCore (~> 5.4)
+    - FirebaseInstanceID (~> 3.8)
+    - GoogleUtilities/UserDefaults (~> 5.3)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseMLVision (0.15.0):
+    - FirebaseCore (~> 5.4)
+    - FirebaseMLCommon (~> 0.15)
+    - GoogleAPIClientForREST/Core (~> 1.3)
+    - GoogleAPIClientForREST/Vision (~> 1.3)
+    - GoogleMobileVision/Detector (~> 1.4)
+  - FirebaseMLVisionBarcodeModel (0.15.0):
+    - GoogleMobileVision/BarcodeDetector (~> 1.4)
+  - FirebaseMLVisionFaceModel (0.15.0):
+    - GoogleMobileVision/FaceDetector (~> 1.4)
+  - FirebaseMLVisionLabelModel (0.15.0):
+    - GoogleMobileVision/LabelDetector (~> 1.4)
+  - FirebaseMLVisionTextModel (0.15.0):
+    - GoogleMobileVision/TextDetector (~> 1.4)
   - Flutter (1.0.0)
+  - flutter_tts (0.0.1):
+    - Flutter
   - google_sign_in (0.0.1):
     - Flutter
     - GoogleSignIn (~> 4.0)
+  - GoogleAPIClientForREST/Core (1.3.8):
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Vision (1.3.8):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAppMeasurement (5.8.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleMobileVision/BarcodeDetector (1.6.0):
+    - GoogleMobileVision/Detector (~> 1.6)
+  - GoogleMobileVision/Detector (1.6.0):
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.1)
+  - GoogleMobileVision/FaceDetector (1.6.0):
+    - GoogleMobileVision/Detector (~> 1.6)
+  - GoogleMobileVision/LabelDetector (1.6.0):
+    - GoogleMobileVision/Detector (~> 1.6)
+  - GoogleMobileVision/TextDetector (1.6.0):
+    - GoogleMobileVision/Detector (~> 1.6)
   - GoogleSignIn (4.4.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -103,6 +161,10 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.2.0):
     - GoogleToolboxForMac/Defines (= 2.2.0)
   - GoogleToolboxForMac/Defines (2.2.0)
+  - GoogleToolboxForMac/Logger (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.0)":
+    - GoogleToolboxForMac/Defines (= 2.2.0)
   - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
     - GoogleToolboxForMac/DebugUtils (= 2.2.0)
     - GoogleToolboxForMac/Defines (= 2.2.0)
@@ -142,7 +204,11 @@ PODS:
     - gRPC-Core/Interface (= 1.17.0)
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.17.0)
+  - GTMSessionFetcher (1.2.1):
+    - GTMSessionFetcher/Full (= 1.2.1)
   - GTMSessionFetcher/Core (1.2.1)
+  - GTMSessionFetcher/Full (1.2.1):
+    - GTMSessionFetcher/Core (= 1.2.1)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -154,17 +220,28 @@ PODS:
   - Protobuf (3.7.0)
   - speech_recognition (0.3.0):
     - Flutter
+  - TensorFlowLite (1.13.1)
+  - tflite (1.0.2):
+    - Flutter
+    - TensorFlowLite
 
 DEPENDENCIES:
   - camera (from `.symlinks/plugins/camera/ios`)
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - cloud_functions (from `.symlinks/plugins/cloud_functions/ios`)
+  - Firebase/MLVisionBarcodeModel
+  - Firebase/MLVisionFaceModel
+  - Firebase/MLVisionLabelModel
+  - Firebase/MLVisionTextModel
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - firebase_ml_vision (from `.symlinks/plugins/firebase_ml_vision/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_tts (from `.symlinks/plugins/flutter_tts/ios`)
   - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - speech_recognition (from `.symlinks/plugins/speech_recognition/ios`)
+  - tflite (from `.symlinks/plugins/tflite/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -178,7 +255,15 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseFunctions
     - FirebaseInstanceID
+    - FirebaseMLCommon
+    - FirebaseMLVision
+    - FirebaseMLVisionBarcodeModel
+    - FirebaseMLVisionFaceModel
+    - FirebaseMLVisionLabelModel
+    - FirebaseMLVisionTextModel
+    - GoogleAPIClientForREST
     - GoogleAppMeasurement
+    - GoogleMobileVision
     - GoogleSignIn
     - GoogleToolboxForMac
     - GoogleUtilities
@@ -188,6 +273,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - TensorFlowLite
 
 EXTERNAL SOURCES:
   camera:
@@ -200,14 +286,20 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_auth/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
+  firebase_ml_vision:
+    :path: ".symlinks/plugins/firebase_ml_vision/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
+  flutter_tts:
+    :path: ".symlinks/plugins/flutter_tts/ios"
   google_sign_in:
     :path: ".symlinks/plugins/google_sign_in/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   speech_recognition:
     :path: ".symlinks/plugins/speech_recognition/ios"
+  tflite:
+    :path: ".symlinks/plugins/tflite/ios"
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
@@ -217,6 +309,7 @@ SPEC CHECKSUMS:
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
   firebase_auth: 02ced56521bc9f220d40edda27b1ec5a2fcdf01e
   firebase_core: ce5006bb48508ee4e71e0f429a3f519bb8ee2961
+  firebase_ml_vision: af45e6730db9be6b6fa2a50292899f65ecfa8777
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
   FirebaseAuth: dd7bbf03a5aee0eafb3a1aee4d2812bd74bac890
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -225,9 +318,18 @@ SPEC CHECKSUMS:
   FirebaseFirestore: faca891c0f0d1d6c10c793473e2f6a29d75014b5
   FirebaseFunctions: 35b530c69ef8c322c414104280d36a06347a5d49
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
+  FirebaseMLCommon: 192c49ec584f1fb559747f1da8052441158b04d7
+  FirebaseMLVision: 257d9f1eaac1565f4dac67adf8b76805fa2a9a80
+  FirebaseMLVisionBarcodeModel: cd84fe257bc02ac93beffc9b9d650d935977a5b1
+  FirebaseMLVisionFaceModel: ff73614967036054129a28bdeae31db8bc16cbbc
+  FirebaseMLVisionLabelModel: 06f4d3bfe538cd19e8379fe215efcb89779603aa
+  FirebaseMLVisionTextModel: 8094f552d742bea9ca7ec0fc9164e11ce6de9fc8
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  flutter_tts: 8ef9d28ecff6321d667307300dbf45151273b3fb
   google_sign_in: 27e70a98b529f0b076d4b19f231b81da28b1750b
+  GoogleAPIClientForREST: 5447a194eae517986cafe6421a5330b80b820591
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
+  GoogleMobileVision: 31cfb4319fd0c03d80105680abd9eae9da5e3b47
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
@@ -239,7 +341,9 @@ SPEC CHECKSUMS:
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   speech_recognition: b5319aace06c3633c0547de44899f6e0bf8b2168
+  TensorFlowLite: 8b9dc4eb32eac0f8cb660c66bca7604da56dcc5a
+  tflite: b79d517e0798d2672516b316c95cf49e03245987
 
-PODFILE CHECKSUM: ebd43b443038e611b86ede96e613bd6033c49497
+PODFILE CHECKSUM: c0690f2231d2991e571222cec37a75799beb59bf
 
 COCOAPODS: 1.6.0
