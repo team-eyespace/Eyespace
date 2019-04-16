@@ -1,0 +1,76 @@
+
+.container-fluid {
+	padding: 60px 50px;
+}
+.bg-grey {
+		background-color: #f6f6f6;
+}
+.logo-small {
+		color: #f4511e;
+		font-size: 50px;
+}
+.logo {
+		color: #f4511e;
+		font-size: 200px;
+}
+.thumbnail {
+		padding: 0 0 15px 0;
+		border: none;
+		border-radius: 0;
+}
+.thumbnail img {
+		width: 100%;
+		height: 100%;
+		margin-bottom: 10px;
+}
+.carousel-control.right, .carousel-control.left {
+		background-image: none;
+		color: #f4511e;
+}
+		/*
+		glyphicon
+
+		*/
+		html {
+			scroll-behavior: smooth;
+		}
+		.card-signup * {
+			color: #fff !important;
+		}
+		::-webkit-input-placeholder {
+			/* Chrome/Opera/Safari */
+			color: #fff !important;
+		}
+		::-moz-placeholder {
+			/* Firefox 19+ */
+			color: #fff !important;
+		}
+		:-ms-input-placeholder {
+			/* IE 10+ */
+			color: #fff !important;
+		}
+		:-moz-placeholder {
+			/* Firefox 18- */
+			color: #fff !important;
+		}
+		input::placeholder {
+			color: #fff !important;
+		}
+		/* label underline focus color */
+		.input-field input[type=text]:focus {
+			border-bottom: 1px solid #fff;
+			box-shadow: 0 1px 0 0 #fff;
+		}
+		.btn-white {
+			color: #F57768 !important;
+		}
+		.navbar-nav * {
+			color: #fff;
+		}
+		@media screen and (max-width:600px) {
+			#gmap_layer,
+			#gmap_canvas {
+				width: 100% !important;
+			}
+		}
+		
