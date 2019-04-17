@@ -1,4 +1,12 @@
+#subscribe-btn-color {
 
+	background-color: #51a2b1;
+
+}
+#eyespace-signature-color {
+
+	color: #5192b1;
+}
 #how-it-works-img {
     width: 100%;
      height: auto;
@@ -66,7 +74,7 @@
 			box-shadow: 0 1px 0 0 #fff;
 		}
 		.btn-white {
-			color: #F57768 !important;
+			color: #51a2b1 !important;
 		}
 		.navbar-nav * {
 			color: #fff;

@@ -6,9 +6,18 @@
 	- [RESOLVED] Google Analytics vs Firebase Analytics decision
 	- [RESOLVED] Fixing Timeline for multiple screens
 	- Updating Backend App
-	- Updating Team Information
+	- [RESOLVED] Updating Team Information
+	- Changing website theme color to blue
 	- Adding Terms and Conditions Page
 	- Add Modal for Success Message
+
+	Color Comments:
+
+	Target Color: #51a2b1
+	Current Color: #f44336 (anticipated) #dd4b39
+
+	Color Changed for:
+	- Glyphicons
 
  -->
 <head>
@@ -55,7 +64,7 @@
 			<div class="navbar-header">
 				
 				<a class="navbar-brand" href="" target="_blank">
-					<img src="assets/img/logored.png" height="150%">
+					<img src="assets/img/logo en 3.png" height="150%">
 				</a>
 			</div>
 
@@ -90,8 +99,6 @@
 
 	<div class="wrapper">
 
-		<!-- Particles.js -->
-
 		<div class="header header-filter" style="background-image: url('assets/img/landing7.jpg');">
 			<div class="container">
 				<div class="row">
@@ -107,7 +114,10 @@
 									<label class="control-label">Enter your email to receive updates</label>
 									<input type="email" class="form-control" name="sub_email" id="maillist_email">
 								</div>
-								<input onclick="sent()" class="btn btn-danger btn-raised btn-lg" type="submit" value="Subscribe" />
+								<input onclick="sent()" id="subscribe-btn-color" class="btn btn-danger btn-raised btn-lg" type="submit" value="Subscribe" />
+								<style>
+								
+								</style>
 								<br>
 								<small id="emailHelp" class="form-text text-muted" style="color: #fff">We'll never share your email with anyone else.</small>
 							</form>
@@ -211,7 +221,7 @@
 		<div class="container-fluid bg-grey">
 			<div class="row">
 				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-globe logo slideanim" style="color:#f44336"></span>
+					<span class="glyphicon glyphicon-globe logo slideanim" style="color:#51a2b1"></span>
 				</div>
 				<div class="col-sm-8">
 					<h2>Mission</h2><br>
@@ -239,7 +249,7 @@
 
 				</div>
 				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-cog logo" style="color:#f44336"></span>
+					<span class="glyphicon glyphicon-cog logo" style="color:#51a2b1"></span>
 				</div>
 			</div>
 		</div>
@@ -744,7 +754,7 @@
 			<div class="copyright pull-right">
 				&copy; 2019, made with
 				<i class="fa fa-heart heart"></i> by
-				<a href="" target="_blank">Team Eyespace</a>
+				<a id="eyespace-signature-color" href="" target="_blank">Team Eyespace</a>
 			</div>
 		</div>
 	</footer>
