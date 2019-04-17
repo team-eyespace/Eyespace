@@ -5,6 +5,7 @@ import 'package:eyespace/middlewares/reg_middleware.dart';
 import 'package:eyespace/reducers/app_reducer.dart';
 import 'package:eyespace/routes.dart';
 import 'package:redux/redux.dart';
+import 'localizations_delegate.dart';
 import 'models/app_state.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -12,6 +13,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:eyespace/keys/keys.dart';
 import 'package:camera/camera.dart';
 import 'package:redux_logging/redux_logging.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+ 
+import 'localizations.dart';
 
 List<CameraDescription> cameras;
 DocumentSnapshot raid;
@@ -114,6 +118,21 @@ class MainApp extends StatelessWidget {
     return new StoreProvider(
       store: store,
       child: new MaterialApp(
+        localizationsDelegates: [
+          const MainLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          // The order of this list matters. By default, if the
+          // device's locale doesn't exactly match a locale in
+          // supportedLocales then the first locale in
+          // supportedLocales with a matching
+          // Locale.languageCode is used. If that fails then the
+          // first locale in supportedLocales is used.
+          const Locale('en'),
+          const Locale('pt'),
+        ],
         navigatorKey: AppKeys.navKey,
         debugShowCheckedModeBanner: false,
         title: title,
