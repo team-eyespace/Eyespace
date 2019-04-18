@@ -17,7 +17,7 @@ $(document).ready(function() {
 				alert("Enter Message");
 			} else {
 				$.ajax({
-					url: 'https://script.google.com/macros/s/AKfycbw7WkJCnwNOOfqYB6CdYacwxBl6QmI0z4iA0P8CbC8Ek0kOeh88/exec',
+					url: '',
 					method: "POST",
 					data: {
 						"name": name,
