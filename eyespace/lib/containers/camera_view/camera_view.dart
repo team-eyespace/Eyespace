@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:eyespace/main.dart';
 import 'package:cloud_functions/cloud_functions.dart';
-//import 'package:flutter_tts/flutter_tts.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_recognition/speech_recognition.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:eyespace/containers/camera_view/detector_painters.dart';
