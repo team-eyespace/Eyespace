@@ -50,7 +50,7 @@ PODS:
     - Firebase/CoreOnly
     - FirebaseMLVisionTextModel (= 0.15.0)
   - firebase_auth (0.0.1):
-    - Firebase/Auth
+    - Firebase/Auth (~> 5.19)
     - Firebase/Core
     - Flutter
   - firebase_core (0.0.1):
@@ -220,10 +220,6 @@ PODS:
   - Protobuf (3.7.0)
   - speech_recognition (0.3.0):
     - Flutter
-  - TensorFlowLite (1.13.1)
-  - tflite (1.0.2):
-    - Flutter
-    - TensorFlowLite
 
 DEPENDENCIES:
   - camera (from `.symlinks/plugins/camera/ios`)
@@ -241,7 +237,6 @@ DEPENDENCIES:
   - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - speech_recognition (from `.symlinks/plugins/speech_recognition/ios`)
-  - tflite (from `.symlinks/plugins/tflite/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -273,7 +268,6 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
-    - TensorFlowLite
 
 EXTERNAL SOURCES:
   camera:
@@ -298,8 +292,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider/ios"
   speech_recognition:
     :path: ".symlinks/plugins/speech_recognition/ios"
-  tflite:
-    :path: ".symlinks/plugins/tflite/ios"
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
@@ -307,7 +299,7 @@ SPEC CHECKSUMS:
   cloud_firestore: cd6e849ecb8ab43e5a7a5f1f169304ca65436c03
   cloud_functions: b98373be5739679dfc7fa6a792ab1c50cbd6edac
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
-  firebase_auth: 02ced56521bc9f220d40edda27b1ec5a2fcdf01e
+  firebase_auth: e32ab45c234bdf847b7777f5b097ce4f7d26879f
   firebase_core: ce5006bb48508ee4e71e0f429a3f519bb8ee2961
   firebase_ml_vision: af45e6730db9be6b6fa2a50292899f65ecfa8777
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
@@ -341,8 +333,6 @@ SPEC CHECKSUMS:
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   speech_recognition: b5319aace06c3633c0547de44899f6e0bf8b2168
-  TensorFlowLite: 8b9dc4eb32eac0f8cb660c66bca7604da56dcc5a
-  tflite: b79d517e0798d2672516b316c95cf49e03245987
 
 PODFILE CHECKSUM: c0690f2231d2991e571222cec37a75799beb59bf
 
