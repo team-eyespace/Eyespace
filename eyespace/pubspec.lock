@@ -105,7 +105,7 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.4+2"
+    version: "0.8.4+5"
   firebase_core:
     dependency: "direct main"
     description:
@@ -137,13 +137,25 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.3"
+  flutter_speech_recognition:
+    dependency: "direct main"
+    description:
+      name: flutter_speech_recognition
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_tts:
+  flutter_text_to_speech:
     dependency: "direct main"
+    description:
+      name: flutter_text_to_speech
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   front_end:
     dependency: transitive
     description:
@@ -154,10 +166,6 @@ packages:
   glob:
     dependency: transitive
     description:
-      path: "/Users/rishabnayak/Desktop/Projects/flutter_tts"
-      relative: false
-    source: path
-    version: "0.2.4"
       name: glob
       url: "https://pub.dartlang.org"
     source: hosted
@@ -314,13 +322,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.4"
-  speech_recognition:
-    dependency: "direct main"
-    description:
-      path: "/Users/rishabnayak/Desktop/Projects/speech_recognition"
-      relative: false
-    source: path
-    version: "0.3.0+1"
   stack_trace:
     dependency: transitive
     description:
@@ -356,13 +357,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.2"
-  tflite:
-    dependency: "direct main"
-    description:
-      name: tflite
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.2"
   typed_data:
     dependency: transitive
     description:
