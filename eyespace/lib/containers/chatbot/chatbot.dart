@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eyespace/main.dart';
 import 'package:cloud_functions/cloud_functions.dart';
-import 'package:flutter_speech_recognition/flutter_speech_recognition.dart';
+import 'package:speech_recognition/speech_recognition.dart';
 
 class ChatMessages extends StatefulWidget {
   @override

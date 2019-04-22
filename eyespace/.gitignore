@@ -64,6 +64,8 @@
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GoogleService-Info.plist
 **/ios/Runner/GeneratedPluginRegistrant.*
+*.p12
+**/ios/Runner 2019-04-22 17-16-03
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
