@@ -50,7 +50,7 @@ PODS:
     - Firebase/CoreOnly
     - FirebaseMLVisionTextModel (= 0.15.0)
   - firebase_auth (0.0.1):
-    - Firebase/Auth
+    - Firebase/Auth (~> 5.19)
     - Firebase/Core
     - Flutter
   - firebase_core (0.0.1):
@@ -299,7 +299,7 @@ SPEC CHECKSUMS:
   cloud_firestore: cd6e849ecb8ab43e5a7a5f1f169304ca65436c03
   cloud_functions: b98373be5739679dfc7fa6a792ab1c50cbd6edac
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
-  firebase_auth: 02ced56521bc9f220d40edda27b1ec5a2fcdf01e
+  firebase_auth: e32ab45c234bdf847b7777f5b097ce4f7d26879f
   firebase_core: ce5006bb48508ee4e71e0f429a3f519bb8ee2961
   firebase_ml_vision: af45e6730db9be6b6fa2a50292899f65ecfa8777
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
