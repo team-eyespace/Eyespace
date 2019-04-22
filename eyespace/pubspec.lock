@@ -137,25 +137,18 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.3"
-  flutter_speech_recognition:
-    dependency: "direct main"
-    description:
-      name: flutter_speech_recognition
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_text_to_speech:
+  flutter_tts:
     dependency: "direct main"
     description:
-      name: flutter_text_to_speech
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
+      path: "/Users/rishabnayak/Desktop/Projects/flutter_tts"
+      relative: false
+    source: path
+    version: "0.2.4"
   front_end:
     dependency: transitive
     description:
@@ -322,6 +315,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.4"
+  speech_recognition:
+    dependency: "direct main"
+    description:
+      path: "/Users/rishabnayak/Desktop/Projects/speech_recognition"
+      relative: false
+    source: path
+    version: "0.3.0+1"
   stack_trace:
     dependency: transitive
     description:
