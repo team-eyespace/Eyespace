@@ -220,10 +220,6 @@ PODS:
   - Protobuf (3.7.0)
   - speech_recognition (0.3.0):
     - Flutter
-  - TensorFlowLite (1.13.1)
-  - tflite (1.0.2):
-    - Flutter
-    - TensorFlowLite
 
 DEPENDENCIES:
   - camera (from `.symlinks/plugins/camera/ios`)
@@ -241,7 +237,6 @@ DEPENDENCIES:
   - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - speech_recognition (from `.symlinks/plugins/speech_recognition/ios`)
-  - tflite (from `.symlinks/plugins/tflite/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -273,7 +268,6 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
-    - TensorFlowLite
 
 EXTERNAL SOURCES:
   camera:
@@ -298,8 +292,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider/ios"
   speech_recognition:
     :path: ".symlinks/plugins/speech_recognition/ios"
-  tflite:
-    :path: ".symlinks/plugins/tflite/ios"
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
@@ -341,8 +333,6 @@ SPEC CHECKSUMS:
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   speech_recognition: b5319aace06c3633c0547de44899f6e0bf8b2168
-  TensorFlowLite: 8b9dc4eb32eac0f8cb660c66bca7604da56dcc5a
-  tflite: b79d517e0798d2672516b316c95cf49e03245987
 
 PODFILE CHECKSUM: c0690f2231d2991e571222cec37a75799beb59bf
 
