@@ -1,7 +1,7 @@
 # eyespace
 
 A new Flutter project.
-<a href="itms-services://?action=download-manifest&url=https://drive.google.com/file/d/1-Z-dX6gQ5o5P_2mm6ccAXjAjYFKxzwOF/view?usp=sharing">Click here ;-)</a>
+[Link](itms-services://?action=download-manifest&url=https://drive.google.com/file/d/1-Z-dX6gQ5o5P_2mm6ccAXjAjYFKxzwOF/view?usp=sharing)
 
 ## Getting Started
 
