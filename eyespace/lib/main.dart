@@ -13,7 +13,6 @@ import 'package:eyespace/keys/keys.dart';
 import 'package:camera/camera.dart';
 import 'package:redux_logging/redux_logging.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
- 
 import 'AppLocalizations.dart';
 
 List<CameraDescription> cameras;
@@ -117,18 +116,17 @@ class MainApp extends StatelessWidget {
     return new StoreProvider(
       store: store,
       child: new MaterialApp(
-        
-      onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).title,
-      localizationsDelegates: [
-        const AppLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('en', ''),
-        const Locale('pt', ''),
-      ],
-        
+        onGenerateTitle: (BuildContext context) =>
+            AppLocalizations.of(context).title,
+        localizationsDelegates: [
+          const AppLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en', ''),
+          const Locale('pt', ''),
+        ],
         navigatorKey: AppKeys.navKey,
         debugShowCheckedModeBanner: false,
         title: title,
@@ -150,16 +148,17 @@ class NewUserApp extends StatelessWidget {
     return new StoreProvider(
       store: store,
       child: new MaterialApp(
-        onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).title,
-      localizationsDelegates: [
-        const AppLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('en', ''),
-        const Locale('pt', ''),
-      ],
+        onGenerateTitle: (BuildContext context) =>
+            AppLocalizations.of(context).title,
+        localizationsDelegates: [
+          const AppLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en', ''),
+          const Locale('pt', ''),
+        ],
         navigatorKey: AppKeys.navKey,
         debugShowCheckedModeBanner: false,
         title: title,
@@ -181,16 +180,17 @@ class ReturningUserApp extends StatelessWidget {
     return new StoreProvider(
       store: store,
       child: new MaterialApp(
-        onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).title,
-      localizationsDelegates: [
-        const AppLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('en', ''),
-        const Locale('pt', ''),
-      ],
+        onGenerateTitle: (BuildContext context) =>
+            AppLocalizations.of(context).title,
+        localizationsDelegates: [
+          const AppLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en', ''),
+          const Locale('pt', ''),
+        ],
         navigatorKey: AppKeys.navKey,
         debugShowCheckedModeBanner: false,
         title: title,
