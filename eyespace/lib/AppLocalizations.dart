@@ -1,32 +1,28 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
-import 'l10n/messages_all.dart';
+import 'package:flutter/foundation.dart';
 
 class AppLocalizations {
-  static Future<AppLocalizations> load(Locale locale) {
-    final String name =
-        locale.countryCode == null ? locale.languageCode : locale.toString();
-    final String localeName = Intl.canonicalizedLocale(name);
+  AppLocalizations(this.locale);
 
-    return initializeMessages(localeName).then((_) {
-      Intl.defaultLocale = localeName;
-      return new AppLocalizations();
-    });
-  }
+  final Locale locale;
 
   static AppLocalizations of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
+  static Map<String, Map<String, String>> _localizedValues = {
+    'en': {
+      'title': 'Hello World',
+    },
+    'pt': {
+      'title': 'Hola Mundo',
+    },
+  };
+
   String get title {
-    return Intl.message(
-      'Hello World',
-      name: 'title',
-      desc: 'Title for the Demo application',
-    );
+    return _localizedValues[locale.languageCode]['title'];
   }
 }
 
@@ -34,17 +30,15 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) {
-    return ['en', 'pt'].contains(locale.languageCode);
-  }
+  bool isSupported(Locale locale) => ['en', 'pt'].contains(locale.languageCode);
 
   @override
   Future<AppLocalizations> load(Locale locale) {
-    return AppLocalizations.load(locale);
+    // Returning a SynchronousFuture here because an async "load" operation
+    // isn't needed to produce an instance of DemoLocalizations.
+    return SynchronousFuture<AppLocalizations>(AppLocalizations(locale));
   }
 
   @override
-  bool shouldReload(LocalizationsDelegate<AppLocalizations> old) {
-    return false;
-  }
+  bool shouldReload(AppLocalizationsDelegate old) => false;
 }

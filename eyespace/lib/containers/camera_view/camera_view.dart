@@ -106,34 +106,33 @@ class CameraViewState extends State<CameraView> {
     controller = CameraController(cameras[0], ResolutionPreset.medium);
     await controller.initialize();
     controller.startImageStream((CameraImage image) {
-    if (_isDetecting) return;
+      if (_isDetecting) return;
 
-    _isDetecting = true;
+      _isDetecting = true;
 
-    detect(image, mlVision.imageLabeler().processImage).then(
-      (dynamic result) {
-        setState(() {
-          _scanResults = result;
-        });
+      detect(image, mlVision.imageLabeler().processImage).then(
+        (dynamic result) {
+          setState(() {
+            _scanResults = result;
+          });
 
-        _isDetecting = false;
-      },
-    ).catchError(
-      (_) {
-        _isDetecting = false;
-      },
-    );
-  });
+          _isDetecting = false;
+        },
+      ).catchError(
+        (_) {
+          _isDetecting = false;
+        },
+      );
+    });
   }
 
   _speakObjects() {
     if (_scanResults is! List<ImageLabel>) {
       flutterTts.speak("Nothing detected!");
-    }
-    else{
+    } else {
       String result = '';
       for (ImageLabel label in _scanResults.take(5)) {
-        result = result +", "+ label.text;
+        result = result + ", " + label.text;
       }
       flutterTts.speak("The scene contains the following " + result);
     }
@@ -225,28 +224,28 @@ class CameraViewState extends State<CameraView> {
   }
 
   Widget _buildResults() {
-  const Text noResultsText = const Text('No results!');
+    const Text noResultsText = const Text('No results!');
 
-  if (_scanResults == null ||
-      controller == null ||
-      !controller.value.isInitialized) {
-    return noResultsText;
+    if (_scanResults == null ||
+        controller == null ||
+        !controller.value.isInitialized) {
+      return noResultsText;
+    }
+
+    CustomPainter painter;
+
+    final Size imageSize = Size(
+      controller.value.previewSize.height,
+      controller.value.previewSize.width,
+    );
+
+    if (_scanResults is! List<ImageLabel>) return noResultsText;
+    painter = LabelDetectorPainter(imageSize, _scanResults);
+
+    return CustomPaint(
+      painter: painter,
+    );
   }
-
-  CustomPainter painter;
-
-  final Size imageSize = Size(
-    controller.value.previewSize.height,
-    controller.value.previewSize.width,
-  );
-
-  if (_scanResults is! List<ImageLabel>) return noResultsText;
-  painter = LabelDetectorPainter(imageSize, _scanResults);
-
-  return CustomPaint(
-    painter: painter,
-  );
-}
 
   @override
   void dispose() {
