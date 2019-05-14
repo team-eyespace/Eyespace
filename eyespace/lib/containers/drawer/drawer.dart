@@ -15,7 +15,6 @@ class DrawerItem {
 }
 
 class DrawerContainer extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final drawerItems = [
