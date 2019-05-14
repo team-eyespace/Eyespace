@@ -23,7 +23,9 @@ class AppLocalizations {
       'mictext': 'Speak',
       'micofftext': 'Stop Speaking',
       'nothingdetected': 'Nothing Detected',
-      'scenedata': 'The scene contains the following '
+      'scenedata': 'The scene contains the following ',
+      'edit': 'Edit',
+      'cancel': 'Cancel'
     },
     'pt': {
       'title': 'Eyespace',
@@ -35,7 +37,9 @@ class AppLocalizations {
       'mictext': 'Falar',
       'micofftext': 'Pare de falar',
       'nothingdetected': 'Nada detectado',
-      'scenedata': 'A cena contém o seguinte '
+      'scenedata': 'A cena contém o seguinte ',
+      'edit': 'Editar',
+      'cancel': 'Cancelar'
     },
   };
 
@@ -79,6 +83,13 @@ class AppLocalizations {
     return _localizedValues[locale.languageCode]['scenedata'];
   }
 
+  String get edit {
+    return _localizedValues[locale.languageCode]['edit'];
+  }
+
+  String get cancel {
+    return _localizedValues[locale.languageCode]['cancel'];
+  }
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

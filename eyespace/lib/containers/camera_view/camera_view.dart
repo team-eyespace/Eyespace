@@ -64,7 +64,10 @@ class CameraViewState extends State<CameraView> {
       isListening = true;
     });
     await _speech.activate();
-    await _speech.listen(locale: 'en_US'); //LOCALIZATION
+    await _speech.listen(
+        locale: AppLocalizations.of(context).locale.toString() == 'pt_'
+            ? 'pt_BR'
+            : 'en_US');
     _speech.setRecognitionResultHandler((handler) {
       _controllerText.text = handler;
     });
@@ -84,7 +87,9 @@ class CameraViewState extends State<CameraView> {
         'projectID': 'stepify-solutions',
         'sessionID': uid,
         'query': text,
-        'languageCode': 'en' //LOCALIZATION
+        'languageCode': AppLocalizations.of(context).locale.toString() == 'pt_'
+            ? 'pt-BR'
+            : 'en'
       },
     ).then((result) {
       if (result[0]['queryResult']['action'] != "image.identify") {
@@ -99,8 +104,6 @@ class CameraViewState extends State<CameraView> {
 
   _initTts() {
     flutterTts = FlutterTts();
-    flutterTts.setLanguage('en_US');
-    print(AppLocalizations.of(context).locale.toString());
   }
 
   _initCamera() async {
@@ -144,21 +147,17 @@ class CameraViewState extends State<CameraView> {
     return CameraPreview(controller);
   }
 
-  Widget _buildIconButton(
-    IconData icon,
-    VoidCallback onPress,
-    String tag, {
-    Color color: Colors.grey,
-    Color backgroundColor: Colors.pinkAccent,
-    String tooltip: "Button"
-  }) {
+  Widget _buildIconButton(IconData icon, VoidCallback onPress, String tag,
+      {Color color: Colors.grey,
+      Color backgroundColor: Colors.pinkAccent,
+      String tooltip: "Button"}) {
     return new FloatingActionButton(
-        child: new Icon(icon),
-        onPressed: onPress,
-        backgroundColor: backgroundColor,
-        heroTag: tag,
-        tooltip: tooltip,
-      );
+      child: new Icon(icon),
+      onPressed: onPress,
+      backgroundColor: backgroundColor,
+      heroTag: tag,
+      tooltip: tooltip,
+    );
   }
 
   _buildNothing() {
@@ -174,22 +173,27 @@ class CameraViewState extends State<CameraView> {
             Flexible(
               child: new Padding(
                   padding: new EdgeInsets.all(8.0),
-                  child: new TextField(
-                    controller: _controllerText,
-                    decoration: InputDecoration.collapsed(hintText: ""),
-                    onTap: _stopRecognition,
-                    onSubmitted: (String out) {
-                      if (_controllerText.text == "") {
-                        return;
-                      } else {
-                        _requestChatBot(
-                            _controllerText.text, raid.data['uid'] ?? "");
-                      }
-                    },
+                  child: Semantics(
+                    child: new TextField(
+                      controller: _controllerText,
+                      decoration: InputDecoration.collapsed(hintText: ""),
+                      onTap: _stopRecognition,
+                      onSubmitted: (String out) {
+                        if (_controllerText.text == "") {
+                          return;
+                        } else {
+                          _requestChatBot(
+                              _controllerText.text, raid.data['uid'] ?? "");
+                        }
+                      },
+                    ),
+                    textField: true,
+                    label: AppLocalizations.of(context).edit,
                   )),
             ),
             new IconButton(
               icon: Icon(Icons.close, color: Colors.grey.shade600),
+              tooltip: AppLocalizations.of(context).cancel,
               onPressed: () {
                 _controllerText.text = "";
                 _cancelRecognition();
@@ -213,25 +217,25 @@ class CameraViewState extends State<CameraView> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       FloatingActionButton(
-                          child: new Icon(Icons.camera),
-                          heroTag: "camera",
-                          onPressed: _speakObjects,
-                          backgroundColor: Colors.blueAccent,
-                          tooltip: AppLocalizations.of(context).cameratext,
-                        ),
+                        child: new Icon(Icons.camera),
+                        heroTag: "camera",
+                        onPressed: _speakObjects,
+                        backgroundColor: Colors.blueAccent,
+                        tooltip: AppLocalizations.of(context).cameratext,
+                      ),
                       !isListening
-                          ? _buildIconButton(Icons.mic, _startRecognition, "mic",
-                              backgroundColor: Colors.blue, color: Colors.blue,
-                              tooltip: AppLocalizations.of(context).mictext
-                            )
+                          ? _buildIconButton(
+                              Icons.mic, _startRecognition, "mic",
+                              backgroundColor: Colors.blue,
+                              color: Colors.blue,
+                              tooltip: AppLocalizations.of(context).mictext)
                           : _buildIconButton(
                               Icons.mic_off,
                               isListening ? _cancelRecognitionHandler : null,
                               "mic",
                               color: Colors.redAccent,
                               backgroundColor: Colors.redAccent,
-                              tooltip: AppLocalizations.of(context).micofftext
-                            )
+                              tooltip: AppLocalizations.of(context).micofftext)
                     ])
               ],
             )));
@@ -270,7 +274,6 @@ class CameraViewState extends State<CameraView> {
   @override
   Widget build(BuildContext context) {
     if (!controller.value.isInitialized) {
-      print(AppLocalizations.of(context).locale);
       return new Container();
     }
     final size = MediaQuery.of(context).size;
