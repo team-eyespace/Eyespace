@@ -13,7 +13,7 @@ import 'package:eyespace/keys/keys.dart';
 import 'package:camera/camera.dart';
 import 'package:redux_logging/redux_logging.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'AppLocalizations.dart';
+import 'package:eyespace/AppLocalizations.dart';
 
 List<CameraDescription> cameras;
 DocumentSnapshot raid;
@@ -106,7 +106,6 @@ Future<Null> main() async {
 }
 
 class MainApp extends StatelessWidget {
-  final String title = 'Eyespace';
   final Store<AppState> store;
 
   MainApp({this.store});
@@ -116,8 +115,6 @@ class MainApp extends StatelessWidget {
     return new StoreProvider(
       store: store,
       child: new MaterialApp(
-        onGenerateTitle: (BuildContext context) =>
-            AppLocalizations.of(context).title,
         localizationsDelegates: [
           const AppLocalizationsDelegate(),
           GlobalMaterialLocalizations.delegate,
@@ -129,7 +126,6 @@ class MainApp extends StatelessWidget {
         ],
         navigatorKey: AppKeys.navKey,
         debugShowCheckedModeBanner: false,
-        title: title,
         routes: getRoutes(context, store),
         initialRoute: '/login',
       ),
@@ -138,7 +134,6 @@ class MainApp extends StatelessWidget {
 }
 
 class NewUserApp extends StatelessWidget {
-  final String title = 'Eyespace';
   final Store<AppState> store;
 
   NewUserApp({this.store});
@@ -148,8 +143,6 @@ class NewUserApp extends StatelessWidget {
     return new StoreProvider(
       store: store,
       child: new MaterialApp(
-        onGenerateTitle: (BuildContext context) =>
-            AppLocalizations.of(context).title,
         localizationsDelegates: [
           const AppLocalizationsDelegate(),
           GlobalMaterialLocalizations.delegate,
@@ -161,7 +154,6 @@ class NewUserApp extends StatelessWidget {
         ],
         navigatorKey: AppKeys.navKey,
         debugShowCheckedModeBanner: false,
-        title: title,
         routes: getRoutes(context, store),
         initialRoute: '/register',
       ),
@@ -170,7 +162,6 @@ class NewUserApp extends StatelessWidget {
 }
 
 class ReturningUserApp extends StatelessWidget {
-  final String title = 'Eyespace';
   final Store<AppState> store;
 
   ReturningUserApp({this.store});
@@ -180,8 +171,6 @@ class ReturningUserApp extends StatelessWidget {
     return new StoreProvider(
       store: store,
       child: new MaterialApp(
-        onGenerateTitle: (BuildContext context) =>
-            AppLocalizations.of(context).title,
         localizationsDelegates: [
           const AppLocalizationsDelegate(),
           GlobalMaterialLocalizations.delegate,
@@ -193,7 +182,6 @@ class ReturningUserApp extends StatelessWidget {
         ],
         navigatorKey: AppKeys.navKey,
         debugShowCheckedModeBanner: false,
-        title: title,
         routes: getRoutes(context, store),
         initialRoute: '/',
       ),
