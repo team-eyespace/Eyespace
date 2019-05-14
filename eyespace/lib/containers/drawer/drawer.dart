@@ -6,6 +6,7 @@ import 'package:redux/redux.dart';
 import 'package:eyespace/actions/navigation_actions.dart';
 import 'package:eyespace/actions/auth_actions.dart';
 import 'package:eyespace/pages/auth_page.dart';
+import 'package:eyespace/AppLocalizations.dart';
 
 class DrawerItem {
   String title;
@@ -14,20 +15,20 @@ class DrawerItem {
 }
 
 class DrawerContainer extends StatelessWidget {
-  final drawerItems = [
-    new DrawerItem("Eyespace", Icons.camera),
-    new DrawerItem("Chat", Icons.chat),
-    new DrawerItem("Update Details", Icons.update)
-  ];
 
   @override
   Widget build(BuildContext context) {
+    final drawerItems = [
+      new DrawerItem(AppLocalizations.of(context).title, Icons.camera),
+      new DrawerItem(AppLocalizations.of(context).chat, Icons.chat),
+      new DrawerItem(AppLocalizations.of(context).updateDetails, Icons.update)
+    ];
     return new StoreConnector<AppState, _ViewModel>(
       converter: _ViewModel.fromStore,
       builder: (BuildContext context, _ViewModel vm) {
         var drawerOptions = <Widget>[];
-        for (var i = 0; i < this.drawerItems.length; i++) {
-          var d = this.drawerItems[i];
+        for (var i = 0; i < drawerItems.length; i++) {
+          var d = drawerItems[i];
           drawerOptions.add(new ListTile(
             leading: new Icon(d.icon),
             title: new Text(d.title),
@@ -54,7 +55,7 @@ class DrawerContainer extends StatelessWidget {
           new Divider(),
           new ListTile(
               leading: Icon(Icons.power_settings_new),
-              title: new Text("Logout"),
+              title: new Text(AppLocalizations.of(context).logout),
               onTap: () {
                 vm.onLogout(context);
               }),

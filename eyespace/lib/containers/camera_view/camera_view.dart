@@ -8,6 +8,7 @@ import 'package:speech_recognition/speech_recognition.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:eyespace/containers/camera_view/detector_painters.dart';
 import 'package:eyespace/containers/camera_view/utils.dart';
+import 'package:eyespace/AppLocalizations.dart';
 
 class CameraView extends StatefulWidget {
   @override
@@ -99,6 +100,7 @@ class CameraViewState extends State<CameraView> {
   _initTts() {
     flutterTts = FlutterTts();
     flutterTts.setLanguage('en_US');
+    print(AppLocalizations.of(context).locale.toString());
   }
 
   _initCamera() async {
@@ -128,13 +130,13 @@ class CameraViewState extends State<CameraView> {
 
   _speakObjects() {
     if (_scanResults is! List<ImageLabel>) {
-      flutterTts.speak("Nothing detected!");
+      flutterTts.speak(AppLocalizations.of(context).nothingdetected);
     } else {
       String result = '';
       for (ImageLabel label in _scanResults.take(5)) {
         result = result + ", " + label.text;
       }
-      flutterTts.speak("The scene contains the following " + result);
+      flutterTts.speak(AppLocalizations.of(context).scenedata + result);
     }
   }
 
@@ -144,14 +146,19 @@ class CameraViewState extends State<CameraView> {
 
   Widget _buildIconButton(
     IconData icon,
-    VoidCallback onPress, {
+    VoidCallback onPress,
+    String tag, {
     Color color: Colors.grey,
     Color backgroundColor: Colors.pinkAccent,
+    String tooltip: "Button"
   }) {
     return new FloatingActionButton(
         child: new Icon(icon),
         onPressed: onPress,
-        backgroundColor: backgroundColor);
+        backgroundColor: backgroundColor,
+        heroTag: tag,
+        tooltip: tooltip,
+      );
   }
 
   _buildNothing() {
@@ -207,17 +214,24 @@ class CameraViewState extends State<CameraView> {
                     children: <Widget>[
                       FloatingActionButton(
                           child: new Icon(Icons.camera),
+                          heroTag: "camera",
                           onPressed: _speakObjects,
-                          backgroundColor: Colors.blueAccent),
+                          backgroundColor: Colors.blueAccent,
+                          tooltip: AppLocalizations.of(context).cameratext,
+                        ),
                       !isListening
-                          ? _buildIconButton(Icons.mic, _startRecognition,
-                              backgroundColor: Colors.blue, color: Colors.blue)
+                          ? _buildIconButton(Icons.mic, _startRecognition, "mic",
+                              backgroundColor: Colors.blue, color: Colors.blue,
+                              tooltip: AppLocalizations.of(context).mictext
+                            )
                           : _buildIconButton(
                               Icons.mic_off,
                               isListening ? _cancelRecognitionHandler : null,
+                              "mic",
                               color: Colors.redAccent,
                               backgroundColor: Colors.redAccent,
-                            ),
+                              tooltip: AppLocalizations.of(context).micofftext
+                            )
                     ])
               ],
             )));
@@ -256,6 +270,7 @@ class CameraViewState extends State<CameraView> {
   @override
   Widget build(BuildContext context) {
     if (!controller.value.isInitialized) {
+      print(AppLocalizations.of(context).locale);
       return new Container();
     }
     final size = MediaQuery.of(context).size;

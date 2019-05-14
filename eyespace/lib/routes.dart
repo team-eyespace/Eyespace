@@ -9,27 +9,28 @@ import 'package:eyespace/pages/home_page.dart';
 import 'models/app_state.dart';
 import 'package:eyespace/pages/update_page.dart';
 import 'package:eyespace/pages/chat_page.dart';
+import 'package:eyespace/AppLocalizations.dart';
 
 Map<String, WidgetBuilder> getRoutes(context, store) {
   return {
     '/': (BuildContext context) => new StoreBuilder<AppState>(
           builder: (context, store) {
-            return HomePage('Eyespace');
+            return HomePage(AppLocalizations.of(context).title);
           },
         ),
     '/chat': (BuildContext context) => new StoreBuilder<AppState>(
           builder: (context, store) {
-            return ChatPage('Chat');
+            return ChatPage(AppLocalizations.of(context).chat);
           },
         ),
     '/update': (BuildContext context) => new StoreBuilder<AppState>(
           builder: (context, store) {
-            return UpdatePage('Update Details');
+            return UpdatePage(AppLocalizations.of(context).updateDetails);
           },
         ),
     '/register': (BuildContext context) => new StoreBuilder<AppState>(
           builder: (context, store) {
-            return RegisterPage('Registration');
+            return RegisterPage(AppLocalizations.of(context).register);
           },
         ),
     '/login': (BuildContext context) => new StoreBuilder<AppState>(
