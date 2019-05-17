@@ -29,6 +29,15 @@ PODS:
   - Firebase/Functions (6.0.0):
     - Firebase/CoreOnly
     - FirebaseFunctions (~> 2.5.0)
+  - Firebase/MLCommon (6.0.0):
+    - Firebase/CoreOnly
+    - FirebaseMLCommon (~> 0.16.0)
+  - Firebase/MLVision (6.0.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVision (~> 0.16.0)
+  - Firebase/MLVisionAutoML (6.0.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionAutoML (~> 0.16.0)
   - Firebase/MLVisionBarcodeModel (6.0.0):
     - Firebase/CoreOnly
     - FirebaseMLVisionBarcodeModel (~> 0.16.0)
@@ -49,10 +58,10 @@ PODS:
     - Firebase/Core
     - Flutter
   - firebase_mlvision (0.0.1):
-    - FirebaseCore
-    - FirebaseMLCommon
-    - FirebaseMLVision
-    - FirebaseMLVisionAutoML
+    - Firebase/Core
+    - Firebase/MLCommon
+    - Firebase/MLVision
+    - Firebase/MLVisionAutoML
     - Flutter
   - FirebaseAnalytics (6.0.0):
     - FirebaseCore (~> 6.0)
@@ -299,7 +308,7 @@ SPEC CHECKSUMS:
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
   firebase_auth: 7a2cc520766f90212b845a5b35316601707bfa25
   firebase_core: ce5006bb48508ee4e71e0f429a3f519bb8ee2961
-  firebase_mlvision: 3b45fdad1ebed28b6ab59ca18b4c6be691b3b89a
+  firebase_mlvision: bc0c37dab2d1059127bf58f1da92b15ac1f77dbc
   FirebaseAnalytics: 1743c5f4de3687d0745709dfdc4b1dea1484f44c
   FirebaseAuth: efc72b0f6fe075d2a6de8d81a6d9de83ef2b47eb
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -333,6 +342,6 @@ SPEC CHECKSUMS:
   speech_recognition: b5319aace06c3633c0547de44899f6e0bf8b2168
   TensorFlowLite: 8b9dc4eb32eac0f8cb660c66bca7604da56dcc5a
 
-PODFILE CHECKSUM: d6247998bc030af0cd32e7105753af623879d578
+PODFILE CHECKSUM: 4c7e970ac5bed3503fb51d0e1f40ab597529e5cc
 
 COCOAPODS: 1.6.0

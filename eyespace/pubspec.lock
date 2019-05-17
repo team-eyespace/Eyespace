@@ -123,9 +123,11 @@ packages:
   firebase_mlvision:
     dependency: "direct main"
     description:
-      path: "/Users/rishabnayak/Desktop/Projects/firebase_mlvision"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: b52f2c1f9a798f42d0e8101b7f545ecb5b5424df
+      url: "git://github.com/rishab2113/firebase_mlvision.git"
+    source: git
     version: "0.0.1"
   flutter:
     dependency: "direct main"
