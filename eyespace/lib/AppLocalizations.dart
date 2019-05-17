@@ -15,7 +15,6 @@ class AppLocalizations {
   static Map<String, Map<String, String>> _localizedValues = {
     'en': {
       'title': 'Eyespace',
-      'chat': 'Chat',
       'update_details': 'Update Details',
       'register': 'Register',
       'logout': 'Logout',
@@ -29,7 +28,6 @@ class AppLocalizations {
     },
     'pt': {
       'title': 'Eyespace',
-      'chat': 'Conversar',
       'update_details': 'Actualizar Detalhes',
       'register': 'Registrar',
       'logout': 'Sair',
