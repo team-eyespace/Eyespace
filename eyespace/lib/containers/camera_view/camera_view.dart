@@ -5,7 +5,7 @@ import 'package:eyespace/main.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_recognition/speech_recognition.dart';
-import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+import 'package:firebase_mlvision/firebase_mlvision.dart';
 import 'package:eyespace/containers/camera_view/detector_painters.dart';
 import 'package:eyespace/containers/camera_view/utils.dart';
 import 'package:eyespace/AppLocalizations.dart';
@@ -81,9 +81,10 @@ class CameraViewState extends State<CameraView> {
 
   _requestChatBot(String text, String uid) {
     _controllerText.clear();
-    CloudFunctions.instance.call(
-      functionName: 'detectIntent',
-      parameters: <String, dynamic>{
+    final HttpsCallable dialogflow = CloudFunctions.instance
+        .getHttpsCallable(functionName: 'detectIntent');
+    dialogflow.call(
+      <String, dynamic>{
         'projectID': 'stepify-solutions',
         'sessionID': uid,
         'query': text,
@@ -92,10 +93,10 @@ class CameraViewState extends State<CameraView> {
             : 'en'
       },
     ).then((result) {
-      if (result[0]['queryResult']['action'] != "image.identify") {
-        flutterTts.speak(result[0]['queryResult']['fulfillmentText'] ??
+      if (result.data[0]['queryResult']['action'] != "image.identify") {
+        flutterTts.speak(result.data[0]['queryResult']['fulfillmentText'] ??
             "An error occurred, please try again!");
-      } else if (result[0]['queryResult']['intent']['displayName'] ==
+      } else if (result.data[0]['queryResult']['intent']['displayName'] ==
           "image.identify") {
         _speakObjects();
       }

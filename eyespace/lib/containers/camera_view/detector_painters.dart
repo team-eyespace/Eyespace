@@ -4,7 +4,7 @@
 
 import 'dart:ui' as ui;
 
-import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+import 'package:firebase_mlvision/firebase_mlvision.dart';
 import 'package:flutter/material.dart';
 
 class LabelDetectorPainter extends CustomPainter {

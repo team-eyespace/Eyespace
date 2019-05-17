@@ -19,7 +19,6 @@ class DrawerContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final drawerItems = [
       new DrawerItem(AppLocalizations.of(context).title, Icons.camera),
-      new DrawerItem(AppLocalizations.of(context).chat, Icons.chat),
       new DrawerItem(AppLocalizations.of(context).updateDetails, Icons.update)
     ];
     return new StoreConnector<AppState, _ViewModel>(
@@ -97,12 +96,8 @@ class _ViewModel {
               Navigator.pushReplacementNamed(context, "/");
               return;
 
-            case 2:
-              Navigator.pushReplacementNamed(context, "/update");
-              return;
-
             case 1:
-              Navigator.pushReplacementNamed(context, "/chat");
+              Navigator.pushReplacementNamed(context, "/update");
               return;
           }
         }
