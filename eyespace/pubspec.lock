@@ -14,7 +14,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.35.4"
+    version: "0.36.3"
   args:
     dependency: transitive
     description:
@@ -56,14 +56,14 @@ packages:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.13+1"
+    version: "0.11.0+2"
   cloud_functions:
     dependency: "direct main"
     description:
       name: cloud_functions
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.2+1"
+    version: "0.3.0+1"
   collection:
     dependency: transitive
     description:
@@ -85,6 +85,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.6"
+  csslib:
+    dependency: transitive
+    description:
+      name: csslib
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.0"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -98,28 +105,30 @@ packages:
       name: dart_style
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.4"
+    version: "1.2.7"
   firebase_auth:
     dependency: "direct main"
     description:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.4+5"
+    version: "0.11.1"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.4"
-  firebase_ml_vision:
+    version: "0.4.0+1"
+  firebase_mlvision:
     dependency: "direct main"
     description:
-      name: firebase_ml_vision
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.0"
+      path: "."
+      ref: HEAD
+      resolved-ref: b52f2c1f9a798f42d0e8101b7f545ecb5b5424df
+      url: "git://github.com/rishab2113/firebase_mlvision.git"
+    source: git
+    version: "0.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -145,9 +154,11 @@ packages:
   flutter_tts:
     dependency: "direct main"
     description:
-      path: "/Users/rishabnayak/Desktop/Projects/flutter_tts"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "0f241b12637b6eb6ed52e92929df9fbbfb0a00ed"
+      url: "git://github.com/rishab2113/flutter_text_to_speech.git"
+    source: git
     version: "0.2.4"
   front_end:
     dependency: transitive
@@ -155,7 +166,7 @@ packages:
       name: front_end
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.14"
+    version: "0.1.18"
   glob:
     dependency: transitive
     description:
@@ -184,6 +195,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.7"
+  html:
+    dependency: transitive
+    description:
+      name: html
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.14.0+2"
   http:
     dependency: transitive
     description:
@@ -211,14 +229,14 @@ packages:
       name: intl_translation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.17.3"
+    version: "0.17.4"
   kernel:
     dependency: transitive
     description:
       name: kernel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.14"
+    version: "0.3.18"
   logging:
     dependency: transitive
     description:
@@ -274,7 +292,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.2.1"
   pub_semver:
     dependency: transitive
     description:
@@ -318,9 +336,11 @@ packages:
   speech_recognition:
     dependency: "direct main"
     description:
-      path: "/Users/rishabnayak/Desktop/Projects/speech_recognition"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "63e7948df2585f54eaf67d27faf156d690cb86ab"
+      url: "git://github.com/rishab2113/flutter_speech_recognition.git"
+    source: git
     version: "0.3.0+1"
   stack_trace:
     dependency: transitive
