@@ -103,6 +103,10 @@ class CameraViewState extends State<CameraView> {
           "image.identify") {
         _speakObjects();
       }
+      else if (result.data[0]['queryResult']['intent']['displayName'] ==
+          "terrain.identify") {
+        _speakTerrain();
+      }
     });
   }
 
