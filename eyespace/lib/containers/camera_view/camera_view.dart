@@ -6,7 +6,6 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_recognition/speech_recognition.dart';
 import 'package:firebase_mlvision/firebase_mlvision.dart';
-import 'package:eyespace/containers/camera_view/detector_painters.dart';
 import 'package:eyespace/containers/camera_view/utils.dart';
 import 'package:eyespace/AppLocalizations.dart';
 
@@ -271,30 +270,6 @@ class CameraViewState extends State<CameraView> {
             )));
   }
 
-  Widget _buildResults() {
-    const Text noResultsText = const Text('No results!');
-
-    if (_scanResults == null ||
-        controller == null ||
-        !controller.value.isInitialized) {
-      return noResultsText;
-    }
-
-    CustomPainter painter;
-
-    final Size imageSize = Size(
-      controller.value.previewSize.height,
-      controller.value.previewSize.width,
-    );
-
-    if (_scanResults is! List<ImageLabel>) return noResultsText;
-    painter = LabelDetectorPainter(imageSize, _scanResults);
-
-    return CustomPaint(
-      painter: painter,
-    );
-  }
-
   @override
   void dispose() {
     controller?.dispose();
@@ -322,7 +297,6 @@ class CameraViewState extends State<CameraView> {
             ),
           ),
         ),
-        _buildResults(),
         Align(
             alignment: Alignment.bottomCenter,
             child: Container(
