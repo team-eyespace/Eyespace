@@ -19,12 +19,15 @@ class AppLocalizations {
       'register': 'Register',
       'logout': 'Logout',
       'cameratext': 'Describe Objects in Frame',
+      'terraindetecttext': 'Describe Terrain',
       'mictext': 'Speak',
       'micofftext': 'Stop Speaking',
       'nothingdetected': 'Nothing Detected',
       'scenedata': 'The scene contains the following ',
       'edit': 'Edit',
-      'cancel': 'Cancel'
+      'cancel': 'Cancel',
+      'roadclear': 'The road ahead looks good!',
+      'roadnotclear': 'There appears to be some obstruction ahead'
     },
     'pt': {
       'title': 'Eyespace',
@@ -32,14 +35,25 @@ class AppLocalizations {
       'register': 'Registrar',
       'logout': 'Sair',
       'cameratext': 'Descrever Objetos no Quadro',
+      'terraindetecttext': 'Descrever Terreno',
       'mictext': 'Falar',
       'micofftext': 'Pare de falar',
       'nothingdetected': 'Nada detectado',
       'scenedata': 'A cena contém o seguinte ',
       'edit': 'Editar',
-      'cancel': 'Cancelar'
+      'cancel': 'Cancelar',
+      'roadclear': 'A estrada à frente parece boa!',
+      'roadnotclear': 'Parece haver alguma obstrução à frente'
     },
   };
+
+  String get roadclear {
+    return _localizedValues[locale.languageCode]['roadclear'];
+  }
+
+  String get roadnotclear {
+    return _localizedValues[locale.languageCode]['roadnotclear'];
+  }
 
   String get title {
     return _localizedValues[locale.languageCode]['title'];
@@ -87,6 +101,10 @@ class AppLocalizations {
 
   String get cancel {
     return _localizedValues[locale.languageCode]['cancel'];
+  }
+
+  String get terraindetecttext {
+    return _localizedValues[locale.languageCode]['terraindetecttext'];
   }
 }
 

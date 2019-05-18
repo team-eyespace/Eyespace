@@ -19,12 +19,15 @@ class CameraView extends StatefulWidget {
 
 class CameraViewState extends State<CameraView> {
   List<ImageLabel> _scanResults;
+  List<VisionEdgeImageLabel> _visionEdgeScanResults;
   bool _isDetecting = false;
   CameraController controller;
   FlutterTts flutterTts;
   SpeechRecognition _speech = SpeechRecognition();
   bool isListening = false;
   TextEditingController _controllerText = new TextEditingController();
+  final FirebaseVision mlVision = FirebaseVision.instance;
+  HandleDetection currentDetector;
 
   @override
   void initState() {
@@ -108,7 +111,7 @@ class CameraViewState extends State<CameraView> {
   }
 
   _initCamera() async {
-    final FirebaseVision mlVision = FirebaseVision.instance;
+    currentDetector = mlVision.imageLabeler().processImage;
     controller = CameraController(cameras[0], ResolutionPreset.medium);
     await controller.initialize();
     controller.startImageStream((CameraImage image) {
@@ -116,10 +119,12 @@ class CameraViewState extends State<CameraView> {
 
       _isDetecting = true;
 
-      detect(image, mlVision.imageLabeler().processImage).then(
+      detect(image, currentDetector).then(
         (dynamic result) {
           setState(() {
-            _scanResults = result;
+            result is List<ImageLabel>
+            ? _scanResults = result
+            : _visionEdgeScanResults = result;
           });
 
           _isDetecting = false;
@@ -133,6 +138,7 @@ class CameraViewState extends State<CameraView> {
   }
 
   _speakObjects() {
+    currentDetector = mlVision.imageLabeler().processImage;
     if (_scanResults is! List<ImageLabel>) {
       flutterTts.speak(AppLocalizations.of(context).nothingdetected);
     } else {
@@ -141,6 +147,22 @@ class CameraViewState extends State<CameraView> {
         result = result + ", " + label.text;
       }
       flutterTts.speak(AppLocalizations.of(context).scenedata + result);
+    }
+  }
+
+  _speakTerrain() {
+    currentDetector = mlVision.visionEdgeImageLabeler('potholes').processImage;
+    if (_visionEdgeScanResults is! List<VisionEdgeImageLabel>) {
+      flutterTts.speak(AppLocalizations.of(context).nothingdetected);
+    } else {
+      for (VisionEdgeImageLabel label in _visionEdgeScanResults) {
+        if (label.text == 'Asphalt'){
+          flutterTts.speak(AppLocalizations.of(context).roadclear);
+        }
+        else{
+          flutterTts.speak(AppLocalizations.of(context).roadnotclear);
+        }
+      }
     }
   }
 
@@ -218,11 +240,18 @@ class CameraViewState extends State<CameraView> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       FloatingActionButton(
-                        child: new Icon(Icons.camera),
-                        heroTag: "camera",
+                        child: new Icon(Icons.accessibility_new),
+                        heroTag: "speakObjects",
                         onPressed: _speakObjects,
-                        backgroundColor: Colors.blueAccent,
+                        backgroundColor: Colors.blue,
                         tooltip: AppLocalizations.of(context).cameratext,
+                      ),
+                      FloatingActionButton(
+                        child: new Icon(Icons.accessible),
+                        heroTag: "detectTerrain",
+                        onPressed: _speakTerrain,
+                        backgroundColor: Colors.blue,
+                        tooltip: AppLocalizations.of(context).terraindetecttext,
                       ),
                       !isListening
                           ? _buildIconButton(
