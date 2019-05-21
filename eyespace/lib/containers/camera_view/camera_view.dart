@@ -28,10 +28,14 @@ class CameraViewState extends State<CameraView> {
   TextEditingController _controllerText = new TextEditingController();
   final FirebaseVision mlVision = FirebaseVision.instance;
   HandleDetection currentDetector;
+  VisionEdgeImageLabeler potholeDetector;
+  ImageLabeler imageLabeler;
 
   @override
   void initState() {
     super.initState();
+    potholeDetector = mlVision.visionEdgeImageLabeler('potholes');
+    imageLabeler = mlVision.imageLabeler();
     _initCamera();
     _initTts();
   }
@@ -115,7 +119,7 @@ class CameraViewState extends State<CameraView> {
   }
 
   _initCamera() async {
-    currentDetector = mlVision.imageLabeler().processImage;
+    currentDetector = imageLabeler.processImage;
     controller = CameraController(cameras[0], ResolutionPreset.medium);
     await controller.initialize();
     controller.startImageStream((CameraImage image) {
@@ -142,7 +146,7 @@ class CameraViewState extends State<CameraView> {
   }
 
   _speakObjects() {
-    currentDetector = mlVision.imageLabeler().processImage;
+    currentDetector = imageLabeler.processImage;
     if (_scanResults is! List<ImageLabel>) {
       flutterTts.speak(AppLocalizations.of(context).nothingdetected);
     } else {
@@ -155,7 +159,7 @@ class CameraViewState extends State<CameraView> {
   }
 
   _speakTerrain() {
-    currentDetector = mlVision.visionEdgeImageLabeler('potholes').processImage;
+    currentDetector = potholeDetector.processImage;
     if (_visionEdgeScanResults is! List<VisionEdgeImageLabel>) {
       flutterTts.speak(AppLocalizations.of(context).nothingdetected);
     } else {
