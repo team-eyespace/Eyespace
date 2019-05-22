@@ -28,7 +28,7 @@ packages:
       name: camera
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.3+2"
+    version: "0.5.2+1"
   charcode:
     dependency: transitive
     description:
@@ -95,11 +95,9 @@ packages:
   firebase_mlvision:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: b52f2c1f9a798f42d0e8101b7f545ecb5b5424df
-      url: "git://github.com/rishab2113/firebase_mlvision.git"
-    source: git
+      path: "/Users/rishabnayak/Desktop/Projects/firebase_mlvision"
+      relative: false
+    source: path
     version: "0.0.1"
   flutter:
     dependency: "direct main"
@@ -208,7 +206,7 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.0+1"
+    version: "1.1.0"
   pedantic:
     dependency: transitive
     description:
@@ -254,7 +252,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "63e7948df2585f54eaf67d27faf156d690cb86ab"
+      resolved-ref: d3badae79e871011a864345a724b2aab2b105a08
       url: "git://github.com/rishab2113/flutter_speech_recognition.git"
     source: git
     version: "0.3.0+1"
