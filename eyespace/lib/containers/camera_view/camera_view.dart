@@ -88,8 +88,8 @@ class CameraViewState extends State<CameraView> {
 
   _requestChatBot(String text, String uid) {
     _controllerText.clear();
-    final HttpsCallable dialogflow = CloudFunctions.instance
-        .getHttpsCallable(functionName: 'detectIntent');
+    final HttpsCallable dialogflow =
+        CloudFunctions.instance.getHttpsCallable(functionName: 'detectIntent');
     dialogflow.call(
       <String, dynamic>{
         'projectID': 'stepify-solutions',
@@ -106,8 +106,7 @@ class CameraViewState extends State<CameraView> {
       } else if (result.data[0]['queryResult']['intent']['displayName'] ==
           "image.identify") {
         _speakObjects();
-      }
-      else if (result.data[0]['queryResult']['intent']['displayName'] ==
+      } else if (result.data[0]['queryResult']['intent']['displayName'] ==
           "terrain.identify") {
         _speakTerrain();
       }
@@ -120,7 +119,7 @@ class CameraViewState extends State<CameraView> {
 
   _initCamera() async {
     currentDetector = imageLabeler.processImage;
-    controller = CameraController(cameras[0], ResolutionPreset.medium);
+    controller = CameraController(cameras[0], ResolutionPreset.low);
     await controller.initialize();
     controller.startImageStream((CameraImage image) {
       if (_isDetecting) return;
@@ -131,8 +130,8 @@ class CameraViewState extends State<CameraView> {
         (dynamic result) {
           setState(() {
             result is List<ImageLabel>
-            ? _scanResults = result
-            : _visionEdgeScanResults = result;
+                ? _scanResults = result
+                : _visionEdgeScanResults = result;
           });
 
           _isDetecting = false;
@@ -164,10 +163,9 @@ class CameraViewState extends State<CameraView> {
       flutterTts.speak(AppLocalizations.of(context).nothingdetected);
     } else {
       for (VisionEdgeImageLabel label in _visionEdgeScanResults) {
-        if (label.text == 'Asphalt'){
+        if (label.text == 'Asphalt') {
           flutterTts.speak(AppLocalizations.of(context).roadclear);
-        }
-        else{
+        } else {
           flutterTts.speak(AppLocalizations.of(context).roadnotclear);
         }
       }
