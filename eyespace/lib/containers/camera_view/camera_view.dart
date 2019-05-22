@@ -118,28 +118,30 @@ class CameraViewState extends State<CameraView> {
 
   _initCamera() async {
     currentDetector = imageLabeler.processImage;
-    controller = CameraController(cameras[0], ResolutionPreset.low);
+    controller = CameraController(cameras[0], ResolutionPreset.medium);
     await controller.initialize();
     controller.startImageStream((CameraImage image) {
       if (_isDetecting) return;
 
       _isDetecting = true;
 
-      detect(image, currentDetector).then(
-        (dynamic result) {
-          setState(() {
-            result is List<ImageLabel>
-                ? _scanResults = result
-                : _visionEdgeScanResults = result;
-          });
+      Future.delayed(const Duration(milliseconds: 60)).then((_) {
+        detect(image, currentDetector).then(
+          (dynamic result) {
+            setState(() {
+              result is List<ImageLabel>
+                  ? _scanResults = result
+                  : _visionEdgeScanResults = result;
+            });
 
-          _isDetecting = false;
-        },
-      ).catchError(
-        (_) {
-          _isDetecting = false;
-        },
-      );
+            _isDetecting = false;
+          },
+        ).catchError(
+          (_) {
+            _isDetecting = false;
+          },
+        );
+      });
     });
   }
 
