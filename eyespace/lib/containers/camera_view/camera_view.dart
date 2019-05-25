@@ -34,7 +34,8 @@ class CameraViewState extends State<CameraView> {
   @override
   void initState() {
     super.initState();
-    potholeDetector = mlVision.visionEdgeImageLabeler('potholes');
+    potholeDetector =
+        mlVision.visionEdgeImageLabeler('potholes', ModelLocation.Local);
     imageLabeler = mlVision.imageLabeler();
     _initCamera();
     _initTts();
