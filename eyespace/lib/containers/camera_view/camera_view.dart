@@ -120,14 +120,14 @@ class CameraViewState extends State<CameraView> {
 
   _initCamera() async {
     currentDetector = imageLabeler.processImage;
-    controller = CameraController(cameras[0], ResolutionPreset.medium);
+    controller = CameraController(cameras[0], ResolutionPreset.low);
     await controller.initialize();
     controller.startImageStream((CameraImage image) {
       if (_isDetecting) return;
 
       _isDetecting = true;
 
-      Future.delayed(const Duration(milliseconds: 60)).then((_) {
+      Future.delayed(const Duration(milliseconds: 100)).then((_) {
         detect(image, currentDetector).then(
           (dynamic result) {
             setState(() {
