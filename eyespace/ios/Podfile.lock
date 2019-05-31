@@ -38,18 +38,9 @@ PODS:
   - Firebase/MLVisionAutoML (6.1.0):
     - Firebase/CoreOnly
     - FirebaseMLVisionAutoML (~> 0.16.0)
-  - Firebase/MLVisionBarcodeModel (6.1.0):
-    - Firebase/CoreOnly
-    - FirebaseMLVisionBarcodeModel (~> 0.16.0)
-  - Firebase/MLVisionFaceModel (6.1.0):
-    - Firebase/CoreOnly
-    - FirebaseMLVisionFaceModel (~> 0.16.0)
   - Firebase/MLVisionLabelModel (6.1.0):
     - Firebase/CoreOnly
     - FirebaseMLVisionLabelModel (~> 0.16.0)
-  - Firebase/MLVisionTextModel (6.1.0):
-    - Firebase/CoreOnly
-    - FirebaseMLVisionTextModel (~> 0.16.0)
   - firebase_auth (0.0.1):
     - Firebase/Auth (~> 6.0)
     - Firebase/Core
@@ -121,14 +112,8 @@ PODS:
     - FirebaseMLCommon (~> 0.16)
     - FirebaseMLVision (~> 0.16)
     - TensorFlowLite (= 1.13.1)
-  - FirebaseMLVisionBarcodeModel (0.16.0):
-    - GoogleMobileVision/BarcodeDetector (~> 1.4)
-  - FirebaseMLVisionFaceModel (0.16.0):
-    - GoogleMobileVision/FaceDetector (~> 1.4)
   - FirebaseMLVisionLabelModel (0.16.0):
     - GoogleMobileVision/LabelDetector (~> 1.4)
-  - FirebaseMLVisionTextModel (0.16.0):
-    - GoogleMobileVision/TextDetector (~> 1.4)
   - Flutter (1.0.0)
   - flutter_tts (0.0.1):
     - Flutter
@@ -146,18 +131,12 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
-  - GoogleMobileVision/BarcodeDetector (1.6.0):
-    - GoogleMobileVision/Detector (~> 1.6)
   - GoogleMobileVision/Detector (1.6.0):
     - GoogleToolboxForMac/Logger (~> 2.1)
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - GTMSessionFetcher/Core (~> 1.1)
     - Protobuf (~> 3.1)
-  - GoogleMobileVision/FaceDetector (1.6.0):
-    - GoogleMobileVision/Detector (~> 1.6)
   - GoogleMobileVision/LabelDetector (1.6.0):
-    - GoogleMobileVision/Detector (~> 1.6)
-  - GoogleMobileVision/TextDetector (1.6.0):
     - GoogleMobileVision/Detector (~> 1.6)
   - GoogleSignIn (4.4.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
@@ -231,10 +210,7 @@ DEPENDENCIES:
   - camera (from `.symlinks/plugins/camera/ios`)
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - cloud_functions (from `.symlinks/plugins/cloud_functions/ios`)
-  - Firebase/MLVisionBarcodeModel
-  - Firebase/MLVisionFaceModel
   - Firebase/MLVisionLabelModel
-  - Firebase/MLVisionTextModel
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_mlvision (from `.symlinks/plugins/firebase_mlvision/ios`)
@@ -258,10 +234,7 @@ SPEC REPOS:
     - FirebaseMLCommon
     - FirebaseMLVision
     - FirebaseMLVisionAutoML
-    - FirebaseMLVisionBarcodeModel
-    - FirebaseMLVisionFaceModel
     - FirebaseMLVisionLabelModel
-    - FirebaseMLVisionTextModel
     - GoogleAPIClientForREST
     - GoogleAppMeasurement
     - GoogleMobileVision
@@ -319,10 +292,7 @@ SPEC CHECKSUMS:
   FirebaseMLCommon: d430756ba2a16bac8fefc81ea416e7f822f052fd
   FirebaseMLVision: 35d0a720334b141d70a55e7e817c1cac23f32285
   FirebaseMLVisionAutoML: ce20b5b0e169cafa07f5bf61048a86aa7df6232c
-  FirebaseMLVisionBarcodeModel: 2abf9867e2c9914726c4d0a6936aaf8b75eb7d46
-  FirebaseMLVisionFaceModel: 897589c0a1d967739cdbb495cf4ca296f8750f75
   FirebaseMLVisionLabelModel: e270ea50a47b9bd5f332c3dffa22eb896ee422cf
-  FirebaseMLVisionTextModel: f5ca6d55bee8f00e08afca69d211fdc4efee1fef
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   flutter_tts: 8ef9d28ecff6321d667307300dbf45151273b3fb
   google_sign_in: 27e70a98b529f0b076d4b19f231b81da28b1750b
@@ -342,6 +312,6 @@ SPEC CHECKSUMS:
   speech_recognition: b5319aace06c3633c0547de44899f6e0bf8b2168
   TensorFlowLite: 8b9dc4eb32eac0f8cb660c66bca7604da56dcc5a
 
-PODFILE CHECKSUM: 4c7e970ac5bed3503fb51d0e1f40ab597529e5cc
+PODFILE CHECKSUM: 2faf3c43fd2f87591bc1faff6ae7123d239dc9e7
 
 COCOAPODS: 1.7.0
