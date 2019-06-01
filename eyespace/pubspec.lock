@@ -84,20 +84,20 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.1"
+    version: "0.11.1+4"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0+1"
+    version: "0.4.0+3"
   firebase_mlvision:
     dependency: "direct main"
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "2880a7e5fd1c7fb7926bf6207a9a62905c3eefd7"
+      resolved-ref: ff5286bc01d3677ceedecbe3304574945bbf1f30
       url: "git://github.com/rishab2113/firebase_mlvision.git"
     source: git
     version: "0.0.1"
@@ -309,4 +309,4 @@ packages:
     version: "2.0.8"
 sdks:
   dart: ">=2.2.0 <3.0.0"
-  flutter: ">=1.2.0 <2.0.0"
+  flutter: ">=1.5.0 <2.0.0"
