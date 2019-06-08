@@ -34,7 +34,7 @@ class CameraViewState extends State<CameraView> {
   void initState() {
     super.initState();
     potholeDetector =
-        mlVision.visionEdgeImageLabeler('potholes', ModelLocation.Remote);
+        mlVision.visionEdgeImageLabeler('potholes', ModelLocation.Local);
     imageLabeler = mlVision.imageLabeler();
     _initCamera();
     _initTextToSpeech();
@@ -77,11 +77,14 @@ class CameraViewState extends State<CameraView> {
     speechRecognition.recognize().listen((onData) {
       _controllerText.text = onData;
     }, onDone: () {
-      setState(() {
-        isListening = false;
+      _requestChatBot(_controllerText.text, raid.data['uid'] ?? "");
+      _controllerText.text = "";
+      speechRecognition.stop().then((onValue) {
+        setState(() {
+          isListening = false;
+        });
       });
     });
-    _requestChatBot(_controllerText.text, raid.data['uid'] ?? "");
   }
 
   _requestChatBot(String text, String uid) {
@@ -164,26 +167,41 @@ class CameraViewState extends State<CameraView> {
   _speakObjects() {
     currentDetector = imageLabeler.processImage;
     if (_scanResults is! List<ImageLabel>) {
-      textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
+      defaultTargetPlatform == TargetPlatform.iOS
+          ? textToSpeech.speak(AppLocalizations.of(context).nothingdetected,
+              VoiceControllerOptions(delay: 2))
+          : textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
     } else {
       String result = '';
       for (ImageLabel label in _scanResults.take(5)) {
         result = result + ", " + label.text;
       }
-      textToSpeech.speak(AppLocalizations.of(context).scenedata + result);
+      defaultTargetPlatform == TargetPlatform.iOS
+          ? textToSpeech.speak(AppLocalizations.of(context).scenedata + result,
+              VoiceControllerOptions(delay: 3))
+          : textToSpeech.speak(AppLocalizations.of(context).scenedata + result);
     }
   }
 
   _speakTerrain() {
     currentDetector = potholeDetector.processImage;
     if (_visionEdgeScanResults is! List<VisionEdgeImageLabel>) {
-      textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
+      defaultTargetPlatform == TargetPlatform.iOS
+          ? textToSpeech.speak(AppLocalizations.of(context).nothingdetected,
+              VoiceControllerOptions(delay: 2))
+          : textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
     } else {
       for (VisionEdgeImageLabel label in _visionEdgeScanResults) {
         if (label.text == 'Asphalt') {
-          textToSpeech.speak(AppLocalizations.of(context).roadclear);
+          defaultTargetPlatform == TargetPlatform.iOS
+              ? textToSpeech.speak(AppLocalizations.of(context).roadclear,
+                  VoiceControllerOptions(delay: 2))
+              : textToSpeech.speak(AppLocalizations.of(context).roadclear);
         } else {
-          textToSpeech.speak(AppLocalizations.of(context).roadnotclear);
+          defaultTargetPlatform == TargetPlatform.iOS
+              ? textToSpeech.speak(AppLocalizations.of(context).roadnotclear,
+                  VoiceControllerOptions(delay: 2))
+              : textToSpeech.speak(AppLocalizations.of(context).roadnotclear);
         }
       }
     }
@@ -191,19 +209,6 @@ class CameraViewState extends State<CameraView> {
 
   _cameraPreview() {
     return CameraPreview(controller);
-  }
-
-  Widget _buildIconButton(IconData icon, VoidCallback onPress, String tag,
-      {Color color: Colors.grey,
-      Color backgroundColor: Colors.pinkAccent,
-      String tooltip: "Button"}) {
-    return new FloatingActionButton(
-      child: new Icon(icon),
-      onPressed: onPress,
-      backgroundColor: backgroundColor,
-      heroTag: tag,
-      tooltip: tooltip,
-    );
   }
 
   _buildNothing() {
@@ -233,14 +238,18 @@ class CameraViewState extends State<CameraView> {
                     label: AppLocalizations.of(context).edit,
                   )),
             ),
-            new IconButton(
-              icon: Icon(Icons.close, color: Colors.grey.shade600),
-              tooltip: AppLocalizations.of(context).cancel,
-              onPressed: () {
-                _controllerText.text = "";
-                _cancelRecognition();
-              },
-            ),
+            new Semantics(
+              child: new IconButton(
+                icon: Icon(Icons.close, color: Colors.grey.shade600),
+                onPressed: () {
+                  _controllerText.text = "";
+                  _cancelRecognition();
+                },
+              ),
+              liveRegion: false,
+              button: true,
+              label: AppLocalizations.of(context).cancel,
+            )
           ],
         ));
   }
@@ -258,33 +267,53 @@ class CameraViewState extends State<CameraView> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
-                      FloatingActionButton(
-                        child: new Icon(Icons.accessibility_new),
-                        heroTag: "speakObjects",
-                        onPressed: _speakObjects,
-                        backgroundColor: Colors.blue,
-                        tooltip: AppLocalizations.of(context).cameratext,
+                      Semantics(
+                        child: FloatingActionButton(
+                          child: new Icon(Icons.accessibility_new),
+                          heroTag: "speakObjects",
+                          onPressed: _speakObjects,
+                          backgroundColor: Colors.blue,
+                        ),
+                        liveRegion: false,
+                        button: true,
+                        label: AppLocalizations.of(context).cameratext,
                       ),
-                      FloatingActionButton(
-                        child: new Icon(Icons.accessible),
-                        heroTag: "detectTerrain",
-                        onPressed: _speakTerrain,
-                        backgroundColor: Colors.blue,
-                        tooltip: AppLocalizations.of(context).terraindetecttext,
+                      Semantics(
+                        child: FloatingActionButton(
+                          child: new Icon(Icons.accessible),
+                          heroTag: "detectTerrain",
+                          onPressed: _speakTerrain,
+                          backgroundColor: Colors.blue,
+                        ),
+                        liveRegion: false,
+                        button: true,
+                        label: AppLocalizations.of(context).terraindetecttext,
                       ),
                       !isListening
-                          ? _buildIconButton(
-                              Icons.mic, _startRecognition, "mic",
-                              backgroundColor: Colors.blue,
-                              color: Colors.blue,
-                              tooltip: AppLocalizations.of(context).mictext)
-                          : _buildIconButton(
-                              Icons.mic_off,
-                              isListening ? _cancelRecognitionHandler : null,
-                              "mic",
-                              color: Colors.redAccent,
-                              backgroundColor: Colors.redAccent,
-                              tooltip: AppLocalizations.of(context).micofftext)
+                          ? Semantics(
+                              child: FloatingActionButton(
+                                child: new Icon(Icons.mic),
+                                heroTag: "mic",
+                                onPressed: _startRecognition,
+                                backgroundColor: Colors.blue,
+                              ),
+                              liveRegion: false,
+                              button: true,
+                              label: AppLocalizations.of(context).mictext,
+                            )
+                          : Semantics(
+                              child: FloatingActionButton(
+                                child: new Icon(Icons.mic_off),
+                                heroTag: "mic",
+                                onPressed: isListening
+                                    ? _cancelRecognitionHandler
+                                    : null,
+                                backgroundColor: Colors.redAccent,
+                              ),
+                              liveRegion: false,
+                              button: true,
+                              label: AppLocalizations.of(context).micofftext,
+                            ),
                     ])
               ],
             )));
