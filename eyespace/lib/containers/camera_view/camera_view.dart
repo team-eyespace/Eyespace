@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:eyespace/main.dart';
 import 'package:cloud_functions/cloud_functions.dart';
-import 'package:flutter_tts/flutter_tts.dart';
-import 'package:speech_recognition/speech_recognition.dart';
+import 'package:flutter_text_to_speech/flutter_text_to_speech.dart';
+import 'package:flutter_speech_recognition/flutter_speech_recognition.dart';
 import 'package:firebase_mlvision/firebase_mlvision.dart';
 import 'package:eyespace/containers/camera_view/detector_painters.dart';
 import 'package:eyespace/containers/camera_view/utils.dart';
@@ -22,8 +22,8 @@ class CameraViewState extends State<CameraView> {
   List<VisionEdgeImageLabel> _visionEdgeScanResults;
   bool _isDetecting = false;
   CameraController controller;
-  FlutterTts flutterTts;
-  SpeechRecognition _speech = SpeechRecognition();
+  VoiceController textToSpeech;
+  RecognitionController speechRecognition;
   bool isListening = false;
   TextEditingController _controllerText = new TextEditingController();
   final FirebaseVision mlVision = FirebaseVision.instance;
@@ -38,32 +38,36 @@ class CameraViewState extends State<CameraView> {
         mlVision.visionEdgeImageLabeler('potholes', ModelLocation.Remote);
     imageLabeler = mlVision.imageLabeler();
     _initCamera();
-    _initTts();
+    _initTextToSpeech();
+    _initSpeechRecognition();
   }
 
   Future _cancelRecognitionHandler() async {
-    final res = await _speech.cancel();
+    speechRecognition.stop().then((onValue) {
+      setState(() {
+        isListening = false;
+      });
+    });
     if (_controllerText.text != "") {
       _requestChatBot(_controllerText.text, raid.data['uid'] ?? "");
     }
     _controllerText.text = "";
-    setState(() {
-      isListening = res;
-    });
   }
 
   Future _cancelRecognition() async {
-    final res = await _speech.stop();
-    _controllerText.text = "";
-    setState(() {
-      isListening = res;
+    speechRecognition.stop().then((onValue) {
+      setState(() {
+        isListening = false;
+      });
     });
+    _controllerText.text = "";
   }
 
   Future _stopRecognition() async {
-    final res = await _speech.stop();
-    setState(() {
-      isListening = res;
+    speechRecognition.stop().then((onValue) {
+      setState(() {
+        isListening = false;
+      });
     });
   }
 
@@ -71,51 +75,56 @@ class CameraViewState extends State<CameraView> {
     setState(() {
       isListening = true;
     });
-    await _speech.activate();
-    await _speech.listen(
-        locale: AppLocalizations.of(context).locale.toString() == 'pt_'
-            ? 'pt_BR'
-            : 'en_US');
-    _speech.setRecognitionResultHandler((handler) {
-      _controllerText.text = handler;
-    });
-    _speech.setRecognitionCompleteHandler((out) {
+    speechRecognition.recognize().listen((onData) {
+      _controllerText.text = onData;
+    }, onDone: () {
       setState(() {
         isListening = false;
       });
-      _requestChatBot(_controllerText.text, raid.data['uid'] ?? "");
     });
+    _requestChatBot(_controllerText.text, raid.data['uid'] ?? "");
   }
 
   _requestChatBot(String text, String uid) {
-    _controllerText.clear();
-    final HttpsCallable dialogflow =
-        CloudFunctions.instance.getHttpsCallable(functionName: 'detectIntent');
-    dialogflow.call(
-      <String, dynamic>{
-        'projectID': 'stepify-solutions',
-        'sessionID': uid,
-        'query': text,
-        'languageCode': AppLocalizations.of(context).locale.toString() == 'pt_'
-            ? 'pt-BR'
-            : 'en'
-      },
-    ).then((result) {
-      if (result.data[0]['queryResult']['action'] != "image.identify") {
-        flutterTts.speak(result.data[0]['queryResult']['fulfillmentText'] ??
-            "An error occurred, please try again!");
-      } else if (result.data[0]['queryResult']['intent']['displayName'] ==
-          "image.identify") {
-        _speakObjects();
-      } else if (result.data[0]['queryResult']['intent']['displayName'] ==
-          "terrain.identify") {
-        _speakTerrain();
-      }
-    });
+    if (text == "") {
+      _controllerText.clear();
+    } else {
+      _controllerText.clear();
+      final HttpsCallable dialogflow = CloudFunctions.instance
+          .getHttpsCallable(functionName: 'detectIntent');
+      dialogflow.call(
+        <String, dynamic>{
+          'projectID': 'stepify-solutions',
+          'sessionID': uid,
+          'query': text,
+          'languageCode':
+              AppLocalizations.of(context).locale.toString() == 'pt_'
+                  ? 'pt-BR'
+                  : 'en'
+        },
+      ).then((result) {
+        if (result.data[0]['queryResult']['action'] != "image.identify") {
+          textToSpeech.speak(result.data[0]['queryResult']['fulfillmentText'] ??
+              "An error occurred, please try again!");
+        } else if (result.data[0]['queryResult']['intent']['displayName'] ==
+            "image.identify") {
+          _speakObjects();
+        } else if (result.data[0]['queryResult']['intent']['displayName'] ==
+            "terrain.identify") {
+          _speakTerrain();
+        }
+      });
+    }
   }
 
-  _initTts() {
-    flutterTts = FlutterTts();
+  _initTextToSpeech() async {
+    textToSpeech = FlutterTextToSpeech.instance.voiceController();
+    await textToSpeech.init();
+  }
+
+  _initSpeechRecognition() async {
+    speechRecognition = FlutterSpeechRecognition.instance.voiceController();
+    await speechRecognition.init();
   }
 
   _initCamera() async {
@@ -132,9 +141,7 @@ class CameraViewState extends State<CameraView> {
       setState(() {});
       controller.startImageStream((CameraImage image) {
         if (_isDetecting) return;
-
         _isDetecting = true;
-
         Future.delayed(const Duration(milliseconds: 100)).then((_) {
           detect(image, currentDetector).then(
             (dynamic result) {
@@ -143,7 +150,6 @@ class CameraViewState extends State<CameraView> {
                     ? _scanResults = result
                     : _visionEdgeScanResults = result;
               });
-
               _isDetecting = false;
             },
           ).catchError(
@@ -159,26 +165,26 @@ class CameraViewState extends State<CameraView> {
   _speakObjects() {
     currentDetector = imageLabeler.processImage;
     if (_scanResults is! List<ImageLabel>) {
-      flutterTts.speak(AppLocalizations.of(context).nothingdetected);
+      textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
     } else {
       String result = '';
       for (ImageLabel label in _scanResults.take(5)) {
         result = result + ", " + label.text;
       }
-      flutterTts.speak(AppLocalizations.of(context).scenedata + result);
+      textToSpeech.speak(AppLocalizations.of(context).scenedata + result);
     }
   }
 
   _speakTerrain() {
     currentDetector = potholeDetector.processImage;
     if (_visionEdgeScanResults is! List<VisionEdgeImageLabel>) {
-      flutterTts.speak(AppLocalizations.of(context).nothingdetected);
+      textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
     } else {
       for (VisionEdgeImageLabel label in _visionEdgeScanResults) {
         if (label.text == 'Asphalt') {
-          flutterTts.speak(AppLocalizations.of(context).roadclear);
+          textToSpeech.speak(AppLocalizations.of(context).roadclear);
         } else {
-          flutterTts.speak(AppLocalizations.of(context).roadnotclear);
+          textToSpeech.speak(AppLocalizations.of(context).roadnotclear);
         }
       }
     }
@@ -220,12 +226,8 @@ class CameraViewState extends State<CameraView> {
                       decoration: InputDecoration.collapsed(hintText: ""),
                       onTap: _stopRecognition,
                       onSubmitted: (String out) {
-                        if (_controllerText.text == "") {
-                          return;
-                        } else {
-                          _requestChatBot(
-                              _controllerText.text, raid.data['uid'] ?? "");
-                        }
+                        _requestChatBot(
+                            _controllerText.text, raid.data['uid'] ?? "");
                       },
                     ),
                     textField: true,

@@ -115,7 +115,9 @@ PODS:
   - FirebaseMLVisionLabelModel (0.16.0):
     - GoogleMobileVision/LabelDetector (~> 1.4)
   - Flutter (1.0.0)
-  - flutter_tts (0.0.1):
+  - flutter_speech_recognition (0.0.1):
+    - Flutter
+  - flutter_text_to_speech (2.0.0):
     - Flutter
   - google_sign_in (0.0.1):
     - Flutter
@@ -202,8 +204,6 @@ PODS:
   - path_provider (0.0.1):
     - Flutter
   - Protobuf (3.7.0)
-  - speech_recognition (0.3.0):
-    - Flutter
   - TensorFlowLite (1.13.1)
 
 DEPENDENCIES:
@@ -214,11 +214,11 @@ DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_mlvision (from `.symlinks/plugins/firebase_mlvision/ios`)
-  - Flutter (from `.symlinks/flutter/ios-profile`)
-  - flutter_tts (from `.symlinks/plugins/flutter_tts/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_speech_recognition (from `.symlinks/plugins/flutter_speech_recognition/ios`)
+  - flutter_text_to_speech (from `.symlinks/plugins/flutter_text_to_speech/ios`)
   - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
-  - speech_recognition (from `.symlinks/plugins/speech_recognition/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -263,15 +263,15 @@ EXTERNAL SOURCES:
   firebase_mlvision:
     :path: ".symlinks/plugins/firebase_mlvision/ios"
   Flutter:
-    :path: ".symlinks/flutter/ios-profile"
-  flutter_tts:
-    :path: ".symlinks/plugins/flutter_tts/ios"
+    :path: ".symlinks/flutter/ios"
+  flutter_speech_recognition:
+    :path: ".symlinks/plugins/flutter_speech_recognition/ios"
+  flutter_text_to_speech:
+    :path: ".symlinks/plugins/flutter_text_to_speech/ios"
   google_sign_in:
     :path: ".symlinks/plugins/google_sign_in/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
-  speech_recognition:
-    :path: ".symlinks/plugins/speech_recognition/ios"
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -294,7 +294,8 @@ SPEC CHECKSUMS:
   FirebaseMLVisionAutoML: ce20b5b0e169cafa07f5bf61048a86aa7df6232c
   FirebaseMLVisionLabelModel: e270ea50a47b9bd5f332c3dffa22eb896ee422cf
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
-  flutter_tts: 8ef9d28ecff6321d667307300dbf45151273b3fb
+  flutter_speech_recognition: 4acdfebd5cf8c642e2a3b0cf40d69e75f454d11e
+  flutter_text_to_speech: 7384947a2265b6e305d0c2c7de90ef33879b853c
   google_sign_in: 27e70a98b529f0b076d4b19f231b81da28b1750b
   GoogleAPIClientForREST: 44c7b678cbab11d26a47eab7309d6179b1a61f0c
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
@@ -309,9 +310,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
-  speech_recognition: b5319aace06c3633c0547de44899f6e0bf8b2168
   TensorFlowLite: 8b9dc4eb32eac0f8cb660c66bca7604da56dcc5a
 
-PODFILE CHECKSUM: 2faf3c43fd2f87591bc1faff6ae7123d239dc9e7
+PODFILE CHECKSUM: 8ddb5ea71bae10d7a5511c5f0f4a9c887e78067e
 
-COCOAPODS: 1.7.0
+COCOAPODS: 1.7.1
