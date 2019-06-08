@@ -214,7 +214,7 @@ DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_mlvision (from `.symlinks/plugins/firebase_mlvision/ios`)
-  - Flutter (from `.symlinks/flutter/ios`)
+  - Flutter (from `.symlinks/flutter/ios-release`)
   - flutter_speech_recognition (from `.symlinks/plugins/flutter_speech_recognition/ios`)
   - flutter_text_to_speech (from `.symlinks/plugins/flutter_text_to_speech/ios`)
   - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
@@ -263,7 +263,7 @@ EXTERNAL SOURCES:
   firebase_mlvision:
     :path: ".symlinks/plugins/firebase_mlvision/ios"
   Flutter:
-    :path: ".symlinks/flutter/ios"
+    :path: ".symlinks/flutter/ios-release"
   flutter_speech_recognition:
     :path: ".symlinks/plugins/flutter_speech_recognition/ios"
   flutter_text_to_speech:
