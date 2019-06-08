@@ -121,10 +121,10 @@ packages:
   flutter_speech_recognition:
     dependency: "direct main"
     description:
-      path: "/Users/rishabnayak/Desktop/Projects/flutter_speech_recognition"
-      relative: false
-    source: path
-    version: "2.0.3"
+      name: flutter_speech_recognition
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -133,10 +133,10 @@ packages:
   flutter_text_to_speech:
     dependency: "direct main"
     description:
-      path: "/Users/rishabnayak/Desktop/Projects/flutter_text_to_speech"
-      relative: false
-    source: path
-    version: "3.0.1"
+      name: flutter_text_to_speech
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.6"
   google_sign_in:
     dependency: "direct main"
     description:
