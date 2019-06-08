@@ -124,7 +124,7 @@ packages:
       name: flutter_speech_recognition
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -136,7 +136,7 @@ packages:
       name: flutter_text_to_speech
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.6"
   google_sign_in:
     dependency: "direct main"
     description:
