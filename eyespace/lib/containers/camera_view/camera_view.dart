@@ -78,11 +78,12 @@ class CameraViewState extends State<CameraView> {
     speechRecognition.recognize().listen((onData) {
       _controllerText.text = onData;
     }, onDone: () {
+      _requestChatBot(_controllerText.text, raid.data['uid'] ?? "");
+      _controllerText.text = "";
       setState(() {
         isListening = false;
       });
     });
-    _requestChatBot(_controllerText.text, raid.data['uid'] ?? "");
   }
 
   _requestChatBot(String text, String uid) {
