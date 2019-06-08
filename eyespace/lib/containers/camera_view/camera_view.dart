@@ -35,7 +35,7 @@ class CameraViewState extends State<CameraView> {
   void initState() {
     super.initState();
     potholeDetector =
-        mlVision.visionEdgeImageLabeler('potholes', ModelLocation.Remote);
+        mlVision.visionEdgeImageLabeler('potholes', ModelLocation.Local);
     imageLabeler = mlVision.imageLabeler();
     _initCamera();
     _initTextToSpeech();
