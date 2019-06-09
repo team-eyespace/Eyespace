@@ -168,7 +168,8 @@ class CameraViewState extends State<CameraView> {
   _speakObjects() {
     currentDetector = imageLabeler.processImage;
     if (_scanResults is! List<ImageLabel>) {
-      defaultTargetPlatform == TargetPlatform.iOS
+      defaultTargetPlatform == TargetPlatform.iOS &&
+              MediaQuery.of(context).accessibleNavigation
           ? textToSpeech.speak(AppLocalizations.of(context).nothingdetected,
               VoiceControllerOptions(delay: 2))
           : textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
@@ -177,7 +178,8 @@ class CameraViewState extends State<CameraView> {
       for (ImageLabel label in _scanResults.take(5)) {
         result = result + ", " + label.text;
       }
-      defaultTargetPlatform == TargetPlatform.iOS
+      defaultTargetPlatform == TargetPlatform.iOS &&
+              MediaQuery.of(context).accessibleNavigation
           ? textToSpeech.speak(AppLocalizations.of(context).scenedata + result,
               VoiceControllerOptions(delay: 3))
           : textToSpeech.speak(AppLocalizations.of(context).scenedata + result);
@@ -187,19 +189,22 @@ class CameraViewState extends State<CameraView> {
   _speakTerrain() {
     currentDetector = potholeDetector.processImage;
     if (_visionEdgeScanResults is! List<VisionEdgeImageLabel>) {
-      defaultTargetPlatform == TargetPlatform.iOS
+      defaultTargetPlatform == TargetPlatform.iOS &&
+              MediaQuery.of(context).accessibleNavigation
           ? textToSpeech.speak(AppLocalizations.of(context).nothingdetected,
               VoiceControllerOptions(delay: 2))
           : textToSpeech.speak(AppLocalizations.of(context).nothingdetected);
     } else {
       for (VisionEdgeImageLabel label in _visionEdgeScanResults) {
         if (label.text == 'Asphalt') {
-          defaultTargetPlatform == TargetPlatform.iOS
+          defaultTargetPlatform == TargetPlatform.iOS &&
+                  MediaQuery.of(context).accessibleNavigation
               ? textToSpeech.speak(AppLocalizations.of(context).roadclear,
                   VoiceControllerOptions(delay: 2))
               : textToSpeech.speak(AppLocalizations.of(context).roadclear);
         } else {
-          defaultTargetPlatform == TargetPlatform.iOS
+          defaultTargetPlatform == TargetPlatform.iOS &&
+                  MediaQuery.of(context).accessibleNavigation
               ? textToSpeech.speak(AppLocalizations.of(context).roadnotclear,
                   VoiceControllerOptions(delay: 2))
               : textToSpeech.speak(AppLocalizations.of(context).roadnotclear);
