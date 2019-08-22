@@ -9,22 +9,7 @@ class AuthPage extends StatelessWidget {
     return new Scaffold(
       body: new Stack(
         children: <Widget>[
-          new SizedBox(
-            width: 20.0,
-            height: 500.0,
-            child: ColorizeAnimatedTextKit(
-      text: [
-        "EyeSpace",
-      ],
-      textStyle: TextStyle(fontSize: 50.0, fontFamily: "Horizon"),
-      colors: [
-        Colors.purple,
-        Colors.blue,
-        Colors.yellow,
-        Colors.red,
-      ],
-    ),
-  ),
+          
           new Container(
             alignment: Alignment.center,
             width: pageSize.width,
@@ -35,90 +20,100 @@ class AuthPage extends StatelessWidget {
                 end: Alignment.bottomLeft,
                 stops: [0.2, 1.0],
                 colors: [
-                  const Color(0xFF3744B0),
-                  const Color(0xFF3799B0),
-                ],
+                  //const Color(0xFF3744B0),
+                  //const Color(0xFF3799B0),
+                  const Color.fromARGB(230,		117, 117, 117	),
+                  //const Color.fromARGB(255, 	144, 164, 174),
+                  const Color.fromARGB(255, 	176, 190, 197)          
+                  ],
               ),
             ),
+          ),
 
-            child: new Container(
-              height: 200.0,
+        new Container(
+      alignment: Alignment.center,
               child: new Column(
                 children: <Widget>[
-                  
                   new Padding(
-                    padding: const EdgeInsets.only(top: 128.0),
-                    child: new GoogleAuthButtonContainer(),
+                    padding: const EdgeInsets.only(top: 120.0),
+                    child: new Image.asset('assets/images/ic_launcher.png', height: 200, width: 200),
+                  ),
+                ],
+              ),
+    ),
 
+new Container(
+      alignment: Alignment.center,
+              child: new Column(
+                children: <Widget>[
+                  new Padding(
+                    padding: const EdgeInsets.only(top: 275.0),
+                    child: SizedBox(
+                      width: 250.0,
+                      child: ColorizeAnimatedTextKit(
+          text: [
+            "Eyespace",
+          ],
+          textStyle: TextStyle(
+              fontSize: 45.0, 
+              fontFamily: "Horizon"
+          ),
+          colors: [
+            Colors.lightBlue,
+            Colors.yellow,
+          ],
+          textAlign: TextAlign.center,
+          alignment: AlignmentDirectional.center // or Alignment.topLeft
+        ),
+      ),
+                        ),
+                      ],
+                    ),
+          ),
+
+          new Container(
+      alignment: Alignment.center,
+              child: new Column(
+                children: <Widget>[
+                  new Padding(
+                    padding: const EdgeInsets.only(top: 450.0),
+                    child: SizedBox(
+                      width: 250.0,
+                      child: ColorizeAnimatedTextKit(
+          text: [
+            "A new way to look",
+          ],
+          textStyle: TextStyle(
+              fontSize: 22.5, 
+              fontFamily: "Horizon"
+          ),
+          colors: [
+            Colors.lightBlue,
+            Colors.yellow,
+          ],
+          textAlign: TextAlign.center,
+          alignment: AlignmentDirectional.center // or Alignment.topLeft
+        ),
+      ),
+                  ),
+                ],
+              ),
+    ),
+
+           new Container(
+             alignment: Alignment.bottomCenter,
+              child: new Column(
+                children: <Widget>[
+                  new Padding(
+                    padding: const EdgeInsets.only(top: 600.0),
+                    child: new GoogleAuthButtonContainer(),
                   ),
                 ],
               ),
             ),
-          ),
         ],
       ),
     );
   }
 
-/*
-Widget logo(BuildContext context){
-      return Padding(
-        padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.15),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: 220,
-          child: Stack(
-            children: <Widget>[
-              Positioned(
-                  child: Container(
-                child: Align(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.white),
-                    width: 150,
-                    height: 150,
-                  ),
-                ),
-                height: 154,
-              )),
-              Positioned(
-                child: Container(
-                    height: 154,
-                    child: Align(
-                      child: Text(
-                        "Eyespace",
-                        style: TextStyle(
-                          fontSize: 120,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    )),
-              ),
-              Positioned(
-                width: MediaQuery.of(context).size.width * 0.15,
-                height: MediaQuery.of(context).size.width * 0.15,
-                bottom: MediaQuery.of(context).size.height * 0.046,
-                right: MediaQuery.of(context).size.width * 0.22,
-                child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
-                ),
-              ),
-              Positioned(
-                width: MediaQuery.of(context).size.width * 0.08,
-                height: MediaQuery.of(context).size.width * 0.08,
-                bottom: 0,
-                right: MediaQuery.of(context).size.width * 0.32,
-                child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    }
-  */
-}
+ }
