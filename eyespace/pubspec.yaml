@@ -64,6 +64,7 @@ flutter:
    - assets/potholes/dict.txt
    - assets/potholes/manifest.json
    - assets/potholes/model.tflite
+   - assets/images/ic_launcher.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
