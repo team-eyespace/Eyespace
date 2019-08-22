@@ -12,7 +12,7 @@ class LoadingPage extends StatelessWidget {
   width: 250.0,
   child: TypewriterAnimatedTextKit(
     text: [
-      "EyeSpace",
+      "Eyespace",
     ],
     textStyle: TextStyle(
         fontSize: 30.0,
