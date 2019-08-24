@@ -14,7 +14,7 @@ Map<String, WidgetBuilder> getRoutes(context, store) {
   return {
     '/': (BuildContext context) => new StoreBuilder<AppState>(
           builder: (context, store) {
-            return HomePage(AppLocalizations.of(context).title);
+            return HomePage();
           },
         ),
     '/update': (BuildContext context) => new StoreBuilder<AppState>(

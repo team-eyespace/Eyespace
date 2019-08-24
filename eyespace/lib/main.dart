@@ -10,17 +10,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:eyespace/keys/keys.dart';
-import 'package:camera/camera.dart';
+import 'package:firebase_livestream_ml_vision/firebase_livestream_ml_vision.dart';
 import 'package:redux_logging/redux_logging.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:eyespace/AppLocalizations.dart';
 
-List<CameraDescription> cameras;
+List<FirebaseCameraDescription> cameras;
 DocumentSnapshot raid;
 String token;
 
 Future<Null> main() async {
-  cameras = await availableCameras();
+  cameras = await camerasAvailable();
   FirebaseUser user;
   final Firestore _db = Firestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
