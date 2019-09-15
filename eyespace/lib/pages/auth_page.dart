@@ -56,7 +56,7 @@ new Container(
           ],
           textStyle: TextStyle(
               fontSize: 45.0, 
-              fontFamily: "Horizon"
+              fontFamily: "Montserrat-Regular"
           ),
           colors: [
             Colors.lightBlue,
@@ -84,8 +84,8 @@ new Container(
             "A new way to look",
           ],
           textStyle: TextStyle(
-              fontSize: 22.5, 
-              fontFamily: "Horizon"
+              fontSize: 23.0, 
+              fontFamily: "Montserrat-Regular"
           ),
           colors: [
             Colors.lightBlue,

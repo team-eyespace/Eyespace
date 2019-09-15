@@ -104,10 +104,11 @@ class RegFormContainer extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(25.0),
                   child: Builder(
                     builder: (context) {
                       return RaisedButton(
+                        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                         onPressed: () {
                           vm.update(
                               vm.currentUser.data['uid'],
