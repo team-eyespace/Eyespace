@@ -121,6 +121,7 @@ class RegFormContainer extends StatelessWidget {
                         },
                         color: MeSuiteColors.blue,
                         child: Text('Submit'),
+                        textColor: Colors.white,
                       );
                     },
                   ),
