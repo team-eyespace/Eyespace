@@ -50,13 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.0+2"
-  cloud_functions:
-    dependency: "direct main"
-    description:
-      name: cloud_functions
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.0+1"
   collection:
     dependency: transitive
     description:
@@ -77,7 +70,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.6"
+    version: "2.1.2"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -91,23 +84,21 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.1+6"
+    version: "0.11.1+12"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0+3"
-  firebase_mlvision:
+    version: "0.4.0+8"
+  firebase_livestream_ml_vision:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: a35a39a96b32860fa049f33adb06746aef950b02
-      url: "git://github.com/rishab2113/firebase_mlvision.git"
-    source: git
-    version: "0.0.1"
+      name: firebase_livestream_ml_vision
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -143,14 +134,14 @@ packages:
       name: flutter_text_to_speech
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.6"
+    version: "3.0.7"
   google_sign_in:
     dependency: "direct main"
     description:
       name: google_sign_in
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.2"
+    version: "4.0.6"
   googleapis:
     dependency: "direct main"
     description:
@@ -164,7 +155,7 @@ packages:
       name: googleapis_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.7"
+    version: "0.2.10"
   http:
     dependency: transitive
     description:
@@ -220,7 +211,7 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
   pedantic:
     dependency: transitive
     description:
