@@ -21,69 +21,94 @@ class RegFormContainer extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 new ListTile(
-                  leading: const Icon(Icons.person),
+                  //leading: const Icon(Icons.person),
                   title: new TextField(
                     controller: vm.usernameController,
                     onChanged: (text) {
                       vm.unameCheck(text);
                     },
                     decoration: new InputDecoration(
+                      prefixIcon: Icon(Icons.account_circle),
                       hintText: "Username",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(32))
+                      )
                     ),
                   ),
                 ),
                 new ListTile(
-                  leading: const Icon(Icons.home),
+                  //leading: const Icon(Icons.home),
                   title: new TextField(
                     controller: vm.cityController,
                     decoration: new InputDecoration(
+                      prefixIcon: Icon(Icons.location_on),
                       hintText: "City",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(32))
+                      )
                     ),
                   ),
                 ),
                 new ListTile(
-                  leading: const Icon(Icons.home),
+                  //leading: const Icon(Icons.home),
                   title: new TextField(
                     controller: vm.stateController,
                     decoration: new InputDecoration(
+                      prefixIcon: Icon(Icons.location_city),
                       hintText: "State",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(32))
+                      )
                     ),
                   ),
                 ),
                 new ListTile(
-                  leading: const Icon(Icons.home),
+                  //leading: const Icon(Icons.home),
                   title: new TextField(
                     controller: vm.countryController,
                     decoration: new InputDecoration(
+                      prefixIcon: Icon(Icons.location_city),
                       hintText: "Country",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(32))
+                      )
                     ),
                   ),
                 ),
                 new ListTile(
-                  leading: const Icon(Icons.phone),
+                  //leading: const Icon(Icons.phone),
                   title: new TextField(
                     keyboardType: TextInputType.number,
                     controller: vm.phoneController,
                     decoration: new InputDecoration(
-                      hintText: "Phone Number",
+                      prefixIcon: Icon(Icons.contact_phone),
+                      hintText: "Contact",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(32))
+                      )
                     ),
                   ),
                 ),
                 new ListTile(
-                  leading: const Icon(Icons.error),
+                  //leading: const Icon(Icons.error),
                   title: new TextField(
                     keyboardType: TextInputType.number,
                     controller: vm.emergencyController,
                     decoration: new InputDecoration(
+                      prefixIcon: Icon(Icons.do_not_disturb_on),
                       hintText: "Emergency Contact",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(32))
+                      )
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(25.0),
                   child: Builder(
                     builder: (context) {
                       return RaisedButton(
+                        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                         onPressed: () {
                           vm.update(
                               vm.currentUser.data['uid'],
@@ -96,6 +121,7 @@ class RegFormContainer extends StatelessWidget {
                         },
                         color: MeSuiteColors.blue,
                         child: Text('Submit'),
+                        textColor: Colors.white,
                       );
                     },
                   ),

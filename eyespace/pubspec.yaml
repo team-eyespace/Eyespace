@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  animated_text_kit: ^1.3.1
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -60,6 +61,16 @@ flutter:
    - assets/potholes/dict.txt
    - assets/potholes/manifest.json
    - assets/potholes/model.tflite
+   - assets/images/ic_launcher.png
+
+  fonts:
+    - family: Roboto-Regular
+      fonts:
+        - asset: assets/Roboto-Regular.ttf
+
+    - family: Montserrat-Regular
+      fonts:
+        - asset: assets/Montserrat-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

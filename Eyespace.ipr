@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
+  <component name="InspectionProjectProfileManager">
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+    </profile>
+    <version value="1.0" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/aapt.iml" filepath="$PROJECT_DIR$/eyespace/build/path_provider/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/aapt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/cloud_firestore/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/eyespace/build/cloud_firestore/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/path_provider/generated/source/buildConfig/buildConfig1.iml" filepath="$PROJECT_DIR$/eyespace/build/path_provider/generated/source/buildConfig/buildConfig1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/firebase_ml_vision/generated/source/buildConfig/buildConfig10.iml" filepath="$PROJECT_DIR$/eyespace/build/firebase_ml_vision/generated/source/buildConfig/buildConfig10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/google_sign_in/generated/source/buildConfig/buildConfig11.iml" filepath="$PROJECT_DIR$/eyespace/build/google_sign_in/generated/source/buildConfig/buildConfig11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/firebase_auth/generated/source/buildConfig/buildConfig2.iml" filepath="$PROJECT_DIR$/eyespace/build/firebase_auth/generated/source/buildConfig/buildConfig2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/generated/source/buildConfig/buildConfig3.iml" filepath="$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/generated/source/buildConfig/buildConfig3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/app/generated/source/buildConfig/buildConfig4.iml" filepath="$PROJECT_DIR$/eyespace/build/app/generated/source/buildConfig/buildConfig4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/cloud_functions/generated/source/buildConfig/buildConfig5.iml" filepath="$PROJECT_DIR$/eyespace/build/cloud_functions/generated/source/buildConfig/buildConfig5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/firebase_core/generated/source/buildConfig/buildConfig6.iml" filepath="$PROJECT_DIR$/eyespace/build/firebase_core/generated/source/buildConfig/buildConfig6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/firebase_mlvision/generated/source/buildConfig/buildConfig7.iml" filepath="$PROJECT_DIR$/eyespace/build/firebase_mlvision/generated/source/buildConfig/buildConfig7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/generated/source/buildConfig/buildConfig8.iml" filepath="$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/generated/source/buildConfig/buildConfig8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/camera/generated/source/buildConfig/buildConfig9.iml" filepath="$PROJECT_DIR$/eyespace/build/camera/generated/source/buildConfig/buildConfig9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/app/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" filepath="$PROJECT_DIR$/eyespace/build/app/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/android/app/src/main/java/com/com.iml" filepath="$PROJECT_DIR$/eyespace/android/app/src/main/java/com/com.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/library_manifest/debug/debug.iml" filepath="$PROJECT_DIR$/eyespace/build/path_provider/intermediates/library_manifest/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/eyespace.iml" filepath="$PROJECT_DIR$/eyespace/eyespace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eyespace/android/app/src/main/main.iml" filepath="$PROJECT_DIR$/eyespace/android/app/src/main/main.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="01">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="010">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="02">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="03">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="04">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="05">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_mlvision/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="06">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="07">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="08">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="09">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/transforms/mergeJavaRes/debug/0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes10">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes11">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes12">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_mlvision/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes13">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes14">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes15">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes16">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes17">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes18">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes19">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes20">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes21">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_mlvision/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes22">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes23">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes24">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes25">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_mlvision/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes26">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes27">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes28">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes29">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes3">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/compile_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes5">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes6">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes7">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes8">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/packaged-classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="classes9">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/runtime_library_classes/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Dart Packages" type="DartPackagesLibraryType">
+      <properties>
+        <option name="packageNameToDirsMap">
+          <entry key="_discoveryapis_commons">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/_discoveryapis_commons-0.1.8+1/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="animated_text_kit">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-1.3.1/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="async">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.2.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="boolean_selector">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-1.0.4/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="camera">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.2+1/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="charcode">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.1.2/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="cloud_firestore">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="cloud_functions">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions-0.3.0+1/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="collection">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="convert">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/convert-2.1.1/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="crypto">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-2.0.6/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="cupertino_icons">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.2/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="firebase_auth">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.11.1+6/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="firebase_core">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+3/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="firebase_mlvision">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/git/firebase_mlvision-a35a39a96b32860fa049f33adb06746aef950b02/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="flutter">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/packages/flutter/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="flutter_localizations">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/packages/flutter_localizations/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="flutter_redux">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_redux-0.5.3/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="flutter_speech_recognition">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_speech_recognition-2.0.5/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="flutter_test">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/packages/flutter_test/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="flutter_text_to_speech">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_text_to_speech-3.0.6/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="google_sign_in">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.2/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="googleapis">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/googleapis-0.53.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="googleapis_auth">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/googleapis_auth-0.2.7/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="http">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.0+2/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="http_parser">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.3/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="intl">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.15.8/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="logging">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="matcher">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.5/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="meta">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.1.6/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="path">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.6.2/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="path_provider">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.1.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="pedantic">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.7.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="quiver">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.0.3/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="redux">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/redux-3.0.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="redux_logging">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/redux_logging-0.3.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="sky_engine">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/pkg/sky_engine/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="source_span">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.5.5/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="stack_trace">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="stream_channel">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.0.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="string_scanner">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.4/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="term_glyph">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.1.0/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="test_api">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.5/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="typed_data">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6/lib" />
+              </list>
+            </value>
+          </entry>
+          <entry key="vector_math">
+            <value>
+              <list>
+                <option value="$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.0.8/lib" />
+              </list>
+            </value>
+          </entry>
+        </option>
+      </properties>
+      <CLASSES>
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/git/firebase_mlvision-a35a39a96b32860fa049f33adb06746aef950b02/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/_discoveryapis_commons-0.1.8+1/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-1.3.1/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.2.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-1.0.4/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.2+1/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.1.2/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions-0.3.0+1/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/convert-2.1.1/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-2.0.6/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.2/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.11.1+6/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+3/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_redux-0.5.3/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_speech_recognition-2.0.5/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_text_to_speech-3.0.6/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.2/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/googleapis-0.53.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/googleapis_auth-0.2.7/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.0+2/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.3/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.15.8/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.5/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.1.6/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.6.2/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.1.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.7.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.0.3/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/redux-3.0.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/redux_logging-0.3.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.5.5/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.0.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.4/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.1.0/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.5/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.0.8/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/pkg/sky_engine/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/packages/flutter/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/packages/flutter_localizations/lib" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/packages/flutter_test/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Dart SDK">
+      <CLASSES>
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/async" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/cli" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/collection" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/convert" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/core" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/developer" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/ffi" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/html" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/indexed_db" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/io" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/isolate" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/js" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/js_util" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/math" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/mirrors" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/svg" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/typed_data" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/web_audio" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/web_gl" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/bin/cache/dart-sdk/lib/web_sql" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/144.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/9.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/187.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/101.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/60.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/87.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/44.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/77.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/34.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/177.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/69.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/26.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/134.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/193.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/150.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/116.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/159.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/162.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/128.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/207.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/72.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/97.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/54.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/11.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/65.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/82.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/22.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/48.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/202.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/183.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/76.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/138.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/112.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/33.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/155.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/59.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/172.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/16.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/198.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/140.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/123.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/50.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/93.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/149.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/106.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/119.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/27.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/127.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/208.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/35.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/135.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/178.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/94.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/51.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/194.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/151.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/86.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/78.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/43.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/143.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/120.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/71.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/163.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/98.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/12.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/55.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/115.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/23.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/19.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/158.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/182.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/90.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/190.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/66.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/83.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/139.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/47.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/201.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/205.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/124.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/62.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/111.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/107.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/58.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/15.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/32.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/75.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/197.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/154.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/171.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/52.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/95.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/152.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/179.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/195.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/36.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/18.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/79.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/118.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/70.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/169.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/209.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/126.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/7.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/160.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/103.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/180.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/189.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/85.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/200.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/42.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/146.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/175.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/24.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/67.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/132.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/157.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/57.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/114.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/191.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/74.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/31.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/14.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/174.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/131.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/181.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/121.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/210.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/164.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/104.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/147.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/108.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/91.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/63.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/168.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/20.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/125.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/142.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/6.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/29.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/185.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/170.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/204.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/153.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/110.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/136.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/80.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/196.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/161.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/53.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/8.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/96.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/206.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/117.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/61.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/17.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/176.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/84.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/25.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/129.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/68.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/133.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/109.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/10.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/102.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/192.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/37.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/145.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/188.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/203.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/73.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/165.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/49.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/122.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/105.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/148.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/211.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/81.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/156.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/64.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/199.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/113.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/21.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/99.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/30.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/130.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/13.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/173.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/56.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/92.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/137.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/45.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/5.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/141.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/184.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/transforms/dexBuilder/debug/28.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug10">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_ml_vision/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_ml_vision/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug3">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/intermediate-jars/debug/res.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/intermediate-jars/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug5">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug6">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug7">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/intermediate-jars/debug/res.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/intermediate-jars/debug/classes.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug8">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="debug9">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/intermediate-jars/debug/classes.jar!/" />
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/intermediate-jars/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
+      <CLASSES>
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/git/firebase_mlvision-a35a39a96b32860fa049f33adb06746aef950b02" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.1.0" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.2" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.11.1+6" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions-0.3.0+1" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.11.0+2" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_text_to_speech-3.0.6" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_speech_recognition-2.0.5" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+3" />
+        <root url="file://$USER_HOME$/Downloads/flutter_windows_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.2+1" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="flutter-x86">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/flutter/flutter-x86.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="gradle-wrapper">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/android/gradle/wrapper/gradle-wrapper.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="libs">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/app/intermediates/flutter/debug/libs.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R10">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R3">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R5">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R6">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_ml_vision/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R7">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_mlvision/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R8">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="R9">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/camera/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/path_provider/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_firestore/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res3">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_auth/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_text_to_speech/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res5">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/flutter_speech_recognition/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res6">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_mlvision/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res7">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/cloud_functions/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res8">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/firebase_core/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="res9">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/eyespace/build/google_sign_in/intermediates/library_java_res/debug/res.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
+</project>

@@ -31,7 +31,7 @@ class _ViewModel {
   static _ViewModel fromStore(Store<AppState> store) {
     return new _ViewModel(
       buttonText:
-          store.state.currentUser != null ? 'Log Out' : 'Log in with Google',
+          store.state.currentUser != null ? 'Sign Out' : 'Sign in with Google',
       onPressedCallback: (context) {
         if (store.state.currentUser != null) {
           store.dispatch(new LogOut());
