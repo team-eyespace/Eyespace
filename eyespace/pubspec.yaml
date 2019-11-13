@@ -34,7 +34,8 @@ dependencies:
   # cloud_functions: ^0.4.1
   path_provider: ^1.1.0
   flutter_speech_recognition: ^2.0.5
-  firebase_livestream_ml_vision: ^1.0.1
+  firebase_livestream_ml_vision: 
+    path: /Users/rishabnayak/Desktop/Projects/firebase_livestream_ml_vision
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

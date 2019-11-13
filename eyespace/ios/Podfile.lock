@@ -258,7 +258,7 @@ SPEC CHECKSUMS:
   cloud_firestore: c6f34148c1dfbb57a6147f9bb49c1c9f5c27036e
   Firebase: 8d77bb33624ae9b62d745d82ec023de5f70f7e4f
   firebase_auth: 00d6e1ab6d890cd6d3c624df61702e3a7072d1e3
-  firebase_core: b3b02d0b5e9d01aab5e50ba7cbcf84c73cb6883c
+  firebase_core: ae55ea92448ec8675d325da4db22cf3b4d58a54d
   firebase_livestream_ml_vision: 6bbfb4ae03c2eda4617f3809c0c93c70c230fcd2
   FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
   FirebaseAuth: 4281d6d98a90881e00710fa8d9e37c2ccdfc7d80
@@ -270,7 +270,7 @@ SPEC CHECKSUMS:
   FirebaseMLVision: 35d0a720334b141d70a55e7e817c1cac23f32285
   FirebaseMLVisionAutoML: ce20b5b0e169cafa07f5bf61048a86aa7df6232c
   FirebaseMLVisionLabelModel: e270ea50a47b9bd5f332c3dffa22eb896ee422cf
-  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_speech_recognition: 4acdfebd5cf8c642e2a3b0cf40d69e75f454d11e
   flutter_text_to_speech: 7384947a2265b6e305d0c2c7de90ef33879b853c
   google_sign_in: 27e70a98b529f0b076d4b19f231b81da28b1750b
