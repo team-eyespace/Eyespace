@@ -16,6 +16,7 @@ class GoogleAuthButton extends StatelessWidget {
     // Raised button is a widget that gives some
     // automatic Material design styles
     return new RaisedButton(
+      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
       onPressed: onPressedCallback,
       color: Colors.white,
       child: new Container(
@@ -33,7 +34,7 @@ class GoogleAuthButton extends StatelessWidget {
           children: [
             // Padding is a convenience widget that adds Padding to it's child
             new Padding(
-              padding: const EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.only(right: 12.0),
               // Image, like everyhting, is just a class.
               // This constructor expects an image URL -- I found this one on Google
               child: new Image.network(
